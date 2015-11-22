@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB8ECB3C-5B46-4185-AA3B-486DFE93788A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnsiSoft.Calculator.Model.Analyzer.Test</RootNamespace>
+    <AssemblyName>Model.Analyzer.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Facade\ProcessorTest.cs" />
+    <Compile Include="Facade\StandardProcessorTest.cs" />
+    <Compile Include="Features\Calculator.feature.cs">
+      <DependentUpon>Calculator.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\CalculatorSteps.cs" />
+    <Compile Include="Features\SyntacticValidation.feature.cs">
+      <DependentUpon>SyntacticValidation.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\SyntacticValidationSteps.cs" />
+    <Compile Include="Lexical\CompiledLexicalRuleTest.cs" />
+    <Compile Include="Lexical\Exceptions\WrongLexicalRuleExceptionTest.cs" />
+    <Compile Include="Lexical\Exceptions\LexicalParsingExceptionTest.cs" />
+    <Compile Include="Lexical\LexicalAnalyzerTest.cs" />
+    <Compile Include="Lexical\LexicalRuleTest.cs" />
+    <Compile Include="Lexical\StandardLexicalAnalyzerTest.cs" />
+    <Compile Include="Lexical\Tokens\BinaryOperatorTokenTest.cs" />
+    <Compile Include="Lexical\Tokens\OperatorTokenTest.cs" />
+    <Compile Include="Lexical\Tokens\SeparatorTokenTest.cs" />
+    <Compile Include="Lexical\Tokens\RightBracketTokenTest.cs" />
+    <Compile Include="Lexical\Tokens\LeftBracketTokenTest.cs" />
+    <Compile Include="Lexical\Tokens\NumberTokenTest.cs" />
+    <Compile Include="Lexical\Tokens\IdentifierTokenTest.cs" />
+    <Compile Include="Lexical\Tokens\TokenTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Syntactic\Blocks\BlockTest.cs" />
+    <Compile Include="Syntactic\Exceptions\SyntacticParseExceptionTest.cs" />
+    <Compile Include="Syntactic\Nodes\BlockSyntacticNodeTest.cs" />
+    <Compile Include="Syntactic\Nodes\TokenSyntacticNodeTest.cs" />
+    <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultHelperTest.cs" />
+    <Compile Include="Syntactic\StandardSyntacticAnalyzerTest.cs" />
+    <Compile Include="Syntactic\SyntacticAnalyzerTest.cs" />
+    <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultTest.cs" />
+    <Compile Include="Syntactic\ParseResult\SyntacticParseResultTest.cs" />
+    <Compile Include="Translate\Exceptions\CannotResolveIdentifierExceptionTest.cs" />
+    <Compile Include="Translate\Exceptions\NonStaticClassExceptionTest.cs" />
+    <Compile Include="Translate\Exceptions\RuntimeCalculatorExceptionTest.cs" />
+    <Compile Include="Translate\Exceptions\TranslateExceptionTest.cs" />
+    <Compile Include="Translate\Linked\LinkedClassTest.cs" />
+    <Compile Include="Translate\LinkerTest.cs" />
+    <Compile Include="Translate\Operators\DivisionOperatorTest.cs" />
+    <Compile Include="Translate\Operators\MinusOperatorTest.cs" />
+    <Compile Include="Translate\Operators\MultiplicationOperatorTest.cs" />
+    <Compile Include="Translate\Operators\PlusOperatorTest.cs" />
+    <Compile Include="Translate\Operators\UnaryMinusOperatorTest.cs" />
+    <Compile Include="Translate\Operators\UnaryPlusOperatorTest.cs" />
+    <Compile Include="Translate\Resolvers\ConstantResolverTest.cs" />
+    <Compile Include="Translate\Resolvers\FunctionResolverTest.cs" />
+    <Compile Include="Translate\Resolvers\ParamFunctionResolverTest.cs" />
+    <Compile Include="Translate\Resolvers\ResolverTypeTest.cs" />
+    <Compile Include="Translate\Rewriter\ResolverSyntaxRewriterTest.cs" />
+    <Compile Include="Translate\StandardCompilatorTest.cs" />
+    <Compile Include="Translate\StandardLinkerTest.cs" />
+    <Compile Include="Translate\Terms\BinaryOperatorTermTest.cs" />
+    <Compile Include="Translate\Terms\ConstantTermTest.cs" />
+    <Compile Include="Translate\Terms\FunctionTermTest.cs" />
+    <Compile Include="Translate\Terms\NumberTermTest.cs" />
+    <Compile Include="Translate\Rewriter\SyntacticNodeHelperTest.cs" />
+    <Compile Include="Translate\Rewriter\SyntaxRewriterTest.cs" />
+    <Compile Include="Translate\StandardTranslatorTest.cs" />
+    <Compile Include="Translate\Terms\ParamFunctionTermTest.cs" />
+    <Compile Include="Translate\Terms\TermSyntacticNodeTest.cs" />
+    <Compile Include="Translate\Terms\UnaryOperatorTermTest.cs" />
+    <Compile Include="Translate\Terms\FunctionDeclarationTermTest.cs" />
+    <Compile Include="Translate\Terms\ConstantDeclarationTermTest.cs" />
+    <Compile Include="Translate\TranslatorTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model.Analyzer\Model.Analyzer.csproj">
+      <Project>{25f53d7e-2cf6-487a-bf02-4e3b0d732b99}</Project>
+      <Name>Model.Analyzer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.Interface\Model.Interface.csproj">
+      <Project>{e449b572-a6cf-4516-bc78-4cb4e249f7d6}</Project>
+      <Name>Model.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Features\Calculator.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Calculator.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SyntacticValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SyntacticValidation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

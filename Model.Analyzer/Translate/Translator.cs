@@ -1,0 +1,43 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
+using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
+using AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter;
+using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
+using AnsiSoft.Calculator.Model.Interface.Facade;
+using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Transit;
+
+namespace AnsiSoft.Calculator.Model.Analyzer.Translate
+{
+    /// <summary>
+    /// Interface for sytactic tree translation 
+    /// </summary>
+    public sealed class Translator : ITranslator
+    {
+        #region implement ITranslator
+        public ISyntacticNode Translate(ISyntacticNode node) =>
+            node.Rewrite(Rules);
+
+        public void CheckResult(ISyntacticNode node) =>
+            node.Rewrite(new SyntaxRewriter(
+                nd => !(nd is TermSyntacticNode),
+                (nd, ch) => { throw new TranslateException(); }));
+
+        #endregion
+
+        /// <summary>
+        /// Translation rule list (rewriters)
+        /// </summary>
+        public IEnumerable<ISyntaxRewriter> Rules { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Translator"/> class.
+        /// </summary>
+        /// <param name="rules">Translation rule list</param>
+        public Translator(IEnumerable<ISyntaxRewriter> rules)
+        {
+            Rules = rules;
+        }
+    }
+}
