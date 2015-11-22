@@ -1,12 +1,12 @@
 ﻿using System;
-using AnsiSoft.Calculator.Model.Analyzer.Facade.Standard;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Interface.Facade;
+using AnsiSoft.Calculator.Model.Logic.Standard;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Features
+namespace AnsiSoft.Calculator.Model.Test.Features
 {
     [Binding, Scope(Feature = "SyntacticValidation")]
     public class SyntacticValidationSteps

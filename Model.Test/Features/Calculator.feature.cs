@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Features
+namespace AnsiSoft.Calculator.Model.Test.Features
 {
     using TechTalk.SpecFlow;
     
@@ -19,21 +19,21 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SyntacticValidation")]
-    public partial class SyntacticValidationFeature
+    [NUnit.Framework.DescriptionAttribute("Calculator")]
+    public partial class CalculatorFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SyntacticValidation.feature"
+#line 1 "Calculator.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SyntacticValidation", "In analyzer to avoid syntactic error\r\nAs a user\r\nI want to be check work syntacti" +
-                    "c parser", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Calculator", "In calculator to get true result\r\nAs a user\r\nI want to be check work of calculato" +
+                    "r", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -67,21 +67,23 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Correct expression")]
-        [NUnit.Framework.TestCaseAttribute("1+2-8*func(1)", null)]
-        [NUnit.Framework.TestCaseAttribute("-2+3", null)]
-        [NUnit.Framework.TestCaseAttribute("16+41-(2*3)", null)]
-        [NUnit.Framework.TestCaseAttribute("1 / 45 + (3-6)", null)]
-        public virtual void CorrectExpression(string expression, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("1+2-1", "2.0", null)]
+        [NUnit.Framework.TestCaseAttribute("2*2-1", "3.0", null)]
+        [NUnit.Framework.TestCaseAttribute("1+2*3/4", "2.5", null)]
+        [NUnit.Framework.TestCaseAttribute("(2+4)*(3+6)", "54", null)]
+        [NUnit.Framework.TestCaseAttribute("Max(2,4,8)", "8.0", null)]
+        [NUnit.Framework.TestCaseAttribute("Min(3,4,Min(3,4))", "3.0", null)]
+        public virtual void CorrectExpression(string expression, string result, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct expression", exampleTags);
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have standard lexical and syntactic analyzers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have standard processor with standart rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("the result hasn\'t errors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the result is {0} within accuracy 1e-3", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -92,16 +94,17 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("-2+3/", null)]
         [NUnit.Framework.TestCaseAttribute("16+41)-(2*3)", null)]
         [NUnit.Framework.TestCaseAttribute("1 / 45? + (3-6)", null)]
+        [NUnit.Framework.TestCaseAttribute("min(1,2)", null)]
         public virtual void IncorrectExpression(string expression, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Incorrect expression", exampleTags);
-#line 20
+#line 21
 this.ScenarioSetup(scenarioInfo);
-#line 22
- testRunner.Given("I have standard lexical and syntactic analyzers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 23
- testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have standard processor with standart rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
+ testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
  testRunner.Then("the result has errors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

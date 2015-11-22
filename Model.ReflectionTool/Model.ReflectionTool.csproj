@@ -4,21 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39BE6E0B-8B89-4588-916C-C9DC58CE62BD}</ProjectGuid>
+    <ProjectGuid>{047CF62F-FC68-4D75-88E1-9AC5CD415BC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnsiSoft.Calculator.Model</RootNamespace>
-    <AssemblyName>Model</AssemblyName>
+    <RootNamespace>AnsiSoft.Calculator.Model.ReflectionTool</RootNamespace>
+    <AssemblyName>Model.ReflectionTool</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,25 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\ProcessorBuilder.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Lexical.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Linker.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Syntactic.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Translator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionHelper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Model.Analyzer\Model.Analyzer.csproj">
-      <Project>{25f53d7e-2cf6-487a-bf02-4e3b0d732b99}</Project>
-      <Name>Model.Analyzer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model.Interface\Model.Interface.csproj">
-      <Project>{e449b572-a6cf-4516-bc78-4cb4e249f7d6}</Project>
-      <Name>Model.Interface</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

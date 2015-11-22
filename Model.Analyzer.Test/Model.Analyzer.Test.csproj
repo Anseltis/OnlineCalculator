@@ -38,21 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,25 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facade\ProcessorTest.cs" />
-    <Compile Include="Facade\StandardProcessorTest.cs" />
-    <Compile Include="Features\Calculator.feature.cs">
-      <DependentUpon>Calculator.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Features\CalculatorSteps.cs" />
-    <Compile Include="Features\SyntacticValidation.feature.cs">
-      <DependentUpon>SyntacticValidation.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Features\SyntacticValidationSteps.cs" />
     <Compile Include="Lexical\CompiledLexicalRuleTest.cs" />
     <Compile Include="Lexical\Exceptions\WrongLexicalRuleExceptionTest.cs" />
     <Compile Include="Lexical\Exceptions\LexicalParsingExceptionTest.cs" />
     <Compile Include="Lexical\LexicalAnalyzerTest.cs" />
     <Compile Include="Lexical\LexicalRuleTest.cs" />
-    <Compile Include="Lexical\StandardLexicalAnalyzerTest.cs" />
     <Compile Include="Lexical\Tokens\BinaryOperatorTokenTest.cs" />
     <Compile Include="Lexical\Tokens\OperatorTokenTest.cs" />
     <Compile Include="Lexical\Tokens\SeparatorTokenTest.cs" />
@@ -98,15 +76,12 @@
     <Compile Include="Syntactic\Nodes\BlockSyntacticNodeTest.cs" />
     <Compile Include="Syntactic\Nodes\TokenSyntacticNodeTest.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultHelperTest.cs" />
-    <Compile Include="Syntactic\StandardSyntacticAnalyzerTest.cs" />
     <Compile Include="Syntactic\SyntacticAnalyzerTest.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultTest.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseResultTest.cs" />
     <Compile Include="Translate\Exceptions\CannotResolveIdentifierExceptionTest.cs" />
-    <Compile Include="Translate\Exceptions\NonStaticClassExceptionTest.cs" />
     <Compile Include="Translate\Exceptions\RuntimeCalculatorExceptionTest.cs" />
     <Compile Include="Translate\Exceptions\TranslateExceptionTest.cs" />
-    <Compile Include="Translate\Linked\LinkedClassTest.cs" />
     <Compile Include="Translate\LinkerTest.cs" />
     <Compile Include="Translate\Operators\DivisionOperatorTest.cs" />
     <Compile Include="Translate\Operators\MinusOperatorTest.cs" />
@@ -119,15 +94,12 @@
     <Compile Include="Translate\Resolvers\ParamFunctionResolverTest.cs" />
     <Compile Include="Translate\Resolvers\ResolverTypeTest.cs" />
     <Compile Include="Translate\Rewriter\ResolverSyntaxRewriterTest.cs" />
-    <Compile Include="Translate\StandardCompilatorTest.cs" />
-    <Compile Include="Translate\StandardLinkerTest.cs" />
     <Compile Include="Translate\Terms\BinaryOperatorTermTest.cs" />
     <Compile Include="Translate\Terms\ConstantTermTest.cs" />
     <Compile Include="Translate\Terms\FunctionTermTest.cs" />
     <Compile Include="Translate\Terms\NumberTermTest.cs" />
     <Compile Include="Translate\Rewriter\SyntacticNodeHelperTest.cs" />
     <Compile Include="Translate\Rewriter\SyntaxRewriterTest.cs" />
-    <Compile Include="Translate\StandardTranslatorTest.cs" />
     <Compile Include="Translate\Terms\ParamFunctionTermTest.cs" />
     <Compile Include="Translate\Terms\TermSyntacticNodeTest.cs" />
     <Compile Include="Translate\Terms\UnaryOperatorTermTest.cs" />
@@ -144,17 +116,13 @@
       <Project>{e449b572-a6cf-4516-bc78-4cb4e249f7d6}</Project>
       <Name>Model.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model.ReflectionTool\Model.ReflectionTool.csproj">
+      <Project>{047cf62f-fc68-4d75-88e1-9ac5cd415bc5}</Project>
+      <Name>Model.ReflectionTool</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\Calculator.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Calculator.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\SyntacticValidation.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SyntacticValidation.feature.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

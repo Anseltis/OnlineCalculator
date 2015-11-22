@@ -45,12 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facade\Processor.cs" />
-    <Compile Include="Facade\ProcessorBuilder.cs" />
-    <Compile Include="Facade\Standard\StandardProcessorBuilder.Linker.cs" />
-    <Compile Include="Facade\Standard\StandardProcessorBuilder.Translator.cs" />
-    <Compile Include="Facade\Standard\StandardProcessorBuilder.Syntactic.cs" />
-    <Compile Include="Facade\Standard\StandardProcessorBuilder.Lexical.cs" />
-    <Compile Include="Facade\Standard\StandardProcessorBuilder.cs" />
     <Compile Include="Lexical\Exceptions\LexicalParsingException.cs" />
     <Compile Include="Lexical\Exceptions\WrongLexicalRuleException.cs" />
     <Compile Include="Lexical\LexicalAnalyzer.cs" />
@@ -75,7 +69,6 @@
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultHelper.cs" />
     <Compile Include="Translate\Compilator.cs" />
     <Compile Include="Translate\Exceptions\CannotResolveIdentifierException.cs" />
-    <Compile Include="Translate\Exceptions\NonStaticClassException.cs" />
     <Compile Include="Translate\Exceptions\RuntimeCalculatorException.cs" />
     <Compile Include="Translate\Exceptions\TranslateException.cs" />
     <Compile Include="Syntactic\Nodes\BlockSyntacticNode.cs" />
@@ -86,7 +79,6 @@
     <Compile Include="Syntactic\SyntacticAnalyzer.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResult.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseResult.cs" />
-    <Compile Include="LinkedLibrary.cs" />
     <Compile Include="Translate\Linker.cs" />
     <Compile Include="Translate\Operators\DivisionOperator.cs" />
     <Compile Include="Translate\Operators\IBinaryOperator.cs" />
@@ -126,9 +118,7 @@
       <Name>Model.Interface</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Translate\Linked\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

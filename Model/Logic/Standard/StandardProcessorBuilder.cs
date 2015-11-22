@@ -1,22 +1,16 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Lexical;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Facade;
+using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Analyzer.Translate;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Facade.Standard
+namespace AnsiSoft.Calculator.Model.Logic.Standard
 {
     /// <summary>
     /// Class for create processor build with standard preference
     /// </summary>
     public static partial class StandardProcessorBuilder
     {
-        /// <summary>
-        /// Create <see cref="ProcessorBuilder"/> class with standard preferences.
-        /// </summary>
-        /// <returns>Builder for processor</returns>
-        public static IProcessorBuilder CreateProcessorBuilder() => 
-            CreateProcessorBuilder(LinkedLibrary);
-
         /// <summary>
         /// Create <see cref="ProcessorBuilder"/> class with standard preferences.
         /// </summary>

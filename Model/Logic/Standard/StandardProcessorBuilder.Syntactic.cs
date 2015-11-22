@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Blocks;
+using AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
-using static AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes.SyntacticNodeTypeHelper;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Facade.Standard
+namespace AnsiSoft.Calculator.Model.Logic.Standard
 {
     /// <summary>
     /// Class for create processor build with standard preference
@@ -14,7 +14,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Facade.Standard
         /// <summary>
         /// Standard target for syntactic analyzer
         /// </summary>
-        public static ISyntacticNodeType SyntacticTarget { get; } = BlockOf<ExpressionBlock>();
+        public static ISyntacticNodeType SyntacticTarget { get; } = SyntacticNodeTypeHelper.BlockOf<ExpressionBlock>();
 
         /// <summary>
         /// List of standard rules for syntactic parsing
@@ -55,69 +55,69 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Facade.Standard
                     nameof(SyntacticRuleType.ExprIsProductExpr),
                     new ISyntacticNodeType[]
                     {
-                        BlockOf<ProductExpressionBlock>()
+                        SyntacticNodeTypeHelper.BlockOf<ProductExpressionBlock>()
                     }),
                 new ExpressionBlock(
                     nameof(SyntacticRuleType.ExprIsProductExprAndBOpAndExpr),
                     new ISyntacticNodeType[]
                     {
-                        BlockOf<ProductExpressionBlock>(), TokenOf<OperatorToken>(), BlockOf<ExpressionBlock>()
+                        SyntacticNodeTypeHelper.BlockOf<ProductExpressionBlock>(), SyntacticNodeTypeHelper.TokenOf<OperatorToken>(), SyntacticNodeTypeHelper.BlockOf<ExpressionBlock>()
                     }),
                 new ProductExpressionBlock(
                     nameof(SyntacticRuleType.ProductExprIsUnaryExpr),
                     new ISyntacticNodeType[]
                     {
-                        BlockOf<UnaryExpressionBlock>()
+                        SyntacticNodeTypeHelper.BlockOf<UnaryExpressionBlock>()
                     }),
                 new ProductExpressionBlock(
                     nameof(SyntacticRuleType.ProductExprIsUnaryExprAndOpAndProductExpr),
                     new ISyntacticNodeType[]
                     {
-                        BlockOf<UnaryExpressionBlock>(), TokenOf<BinaryOperatorToken>(),
-                        BlockOf<ProductExpressionBlock>()
+                        SyntacticNodeTypeHelper.BlockOf<UnaryExpressionBlock>(), SyntacticNodeTypeHelper.TokenOf<BinaryOperatorToken>(),
+                        SyntacticNodeTypeHelper.BlockOf<ProductExpressionBlock>()
                     }),
                 new UnaryExpressionBlock(
                     nameof(SyntacticRuleType.UnaryExprIsIdentifier),
                     new ISyntacticNodeType[]
                     {
-                        TokenOf<IdentifierToken>()
+                        SyntacticNodeTypeHelper.TokenOf<IdentifierToken>()
                     }),
                 new UnaryExpressionBlock(
                     nameof(SyntacticRuleType.UnaryExprIsNumber),
                     new ISyntacticNodeType[]
                     {
-                        TokenOf<NumberToken>()
+                        SyntacticNodeTypeHelper.TokenOf<NumberToken>()
                     }),
                 new UnaryExpressionBlock(
                     nameof(SyntacticRuleType.UnaryExprIsLBrAndExprAndRBr),
                     new ISyntacticNodeType[]
                     {
-                        TokenOf<LeftBracketToken>(), BlockOf<ExpressionBlock>(), TokenOf<RightBracketToken>(),
+                        SyntacticNodeTypeHelper.TokenOf<LeftBracketToken>(), SyntacticNodeTypeHelper.BlockOf<ExpressionBlock>(), SyntacticNodeTypeHelper.TokenOf<RightBracketToken>(),
                     }),
                 new UnaryExpressionBlock(
                     nameof(SyntacticRuleType.UnaryExprIsOperatorAndUnaryExpr),
                     new ISyntacticNodeType[]
                     {
-                        TokenOf<OperatorToken>(), BlockOf<UnaryExpressionBlock>()
+                        SyntacticNodeTypeHelper.TokenOf<OperatorToken>(), SyntacticNodeTypeHelper.BlockOf<UnaryExpressionBlock>()
                     }),
                 new UnaryExpressionBlock(
                     nameof(SyntacticRuleType.UnaryExprIsIdentifierAndLBrAndTupleAndRBr),
                     new ISyntacticNodeType[]
                     {
-                        TokenOf<IdentifierToken>(),
-                        TokenOf<LeftBracketToken>(), BlockOf<TupleBlock>(), TokenOf<RightBracketToken>(),
+                        SyntacticNodeTypeHelper.TokenOf<IdentifierToken>(),
+                        SyntacticNodeTypeHelper.TokenOf<LeftBracketToken>(), SyntacticNodeTypeHelper.BlockOf<TupleBlock>(), SyntacticNodeTypeHelper.TokenOf<RightBracketToken>(),
                     }),
                 new TupleBlock(
                     nameof(SyntacticRuleType.TupleIsExpr),
                     new ISyntacticNodeType[]
                     {
-                        BlockOf<ExpressionBlock>()
+                        SyntacticNodeTypeHelper.BlockOf<ExpressionBlock>()
                     }),
                 new TupleBlock(
                     nameof(SyntacticRuleType.TupleIsExprAndSeparatorAndTuple),
                     new ISyntacticNodeType[]
                     {
-                        BlockOf<ExpressionBlock>(), TokenOf<SeparatorToken>(), BlockOf<TupleBlock>()
+                        SyntacticNodeTypeHelper.BlockOf<ExpressionBlock>(), SyntacticNodeTypeHelper.TokenOf<SeparatorToken>(), SyntacticNodeTypeHelper.BlockOf<TupleBlock>()
                     })
             };
     }

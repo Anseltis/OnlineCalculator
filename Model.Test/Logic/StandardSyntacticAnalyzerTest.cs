@@ -1,13 +1,13 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Facade.Standard;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Blocks;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Exceptions;
+using AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes;
 using AnsiSoft.Calculator.Model.Interface.Facade;
+using AnsiSoft.Calculator.Model.Logic.Standard;
 using NUnit.Framework;
-using static AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes.SyntacticNodeTypeHelper;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Syntactic
+namespace AnsiSoft.Calculator.Model.Test.Logic
 {
 
     [TestFixture]
@@ -47,7 +47,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Syntactic
         public void Parse_InValidLexicalExpression_Throw(string text)
         {
             var tokens = LexicalAnalyzer.Parse(text);
-            SyntacticAnalyzer.Parse(tokens, BlockOf<ExpressionBlock>());
+            SyntacticAnalyzer.Parse(tokens, SyntacticNodeTypeHelper.BlockOf<ExpressionBlock>());
         }
 
 

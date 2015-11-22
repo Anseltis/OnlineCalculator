@@ -38,12 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Rhino.Mocks">
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,14 +54,31 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TechTalk.SpecFlow, Version=1.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.1.4.0\lib\TechTalk.SpecFlow.dll</HintPath>
+    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Calculator.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calculator.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CalculatorSteps.cs" />
+    <Compile Include="Features\SyntacticValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyntacticValidation.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SyntacticValidationSteps.cs" />
+    <Compile Include="Logic\StandardCompilatorTest.cs" />
+    <Compile Include="Logic\StandardLexicalAnalyzerTest.cs" />
+    <Compile Include="Logic\StandardLinkerTest.cs" />
+    <Compile Include="Logic\StandardProcessorTest.cs" />
+    <Compile Include="Logic\StandardSyntacticAnalyzerTest.cs" />
+    <Compile Include="Logic\StandardTranslatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpecFlowNUnitExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model.Analyzer\Model.Analyzer.csproj">
@@ -71,17 +89,32 @@
       <Project>{e449b572-a6cf-4516-bc78-4cb4e249f7d6}</Project>
       <Name>Model.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model.Reflection\Model.Reflection.csproj">
+      <Project>{a9e635bf-44de-41b6-8b0c-e4addaf51846}</Project>
+      <Name>Model.Reflection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{39be6e0b-8b89-4588-916c-c9dc58ce62bd}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Logic\" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Calculator.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Calculator.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SyntacticValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SyntacticValidation.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Wrong\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,10 +1,11 @@
 ﻿using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Facade.Standard;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions;
+using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
+using AnsiSoft.Calculator.Model.Logic.Standard;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical
+namespace AnsiSoft.Calculator.Model.Test.Logic
 {
     [TestFixture]
     public class StandardLexicalAnalyzerTest
@@ -70,5 +71,29 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical
         {
             Assert.That(Analyzer.Parse(text).Count(), Is.EqualTo(count));
         }
+
+        [Test, Description("Rignt construction")]
+        public void Parse_Text_TrueToken()
+        {
+            var analyzer = new LexicalAnalyzer(StandardProcessorBuilder.LexicalRules);
+            const string text = "2 +3.3 + func(4,7)*u ";
+            var tokens = analyzer.Parse(text).ToArray();
+
+            Assert.That(tokens.Length, Is.EqualTo(12));
+
+            Assert.That(tokens[0], Is.TypeOf<NumberToken>());
+            Assert.That(tokens[1], Is.TypeOf<OperatorToken>());
+            Assert.That(tokens[2], Is.TypeOf<NumberToken>());
+            Assert.That(tokens[3], Is.TypeOf<OperatorToken>());
+            Assert.That(tokens[4], Is.TypeOf<IdentifierToken>());
+            Assert.That(tokens[5], Is.TypeOf<LeftBracketToken>());
+            Assert.That(tokens[6], Is.TypeOf<NumberToken>());
+            Assert.That(tokens[7], Is.TypeOf<SeparatorToken>());
+            Assert.That(tokens[8], Is.TypeOf<NumberToken>());
+            Assert.That(tokens[9], Is.TypeOf<RightBracketToken>());
+            Assert.That(tokens[10], Is.TypeOf<BinaryOperatorToken>());
+            Assert.That(tokens[11], Is.TypeOf<IdentifierToken>());
+        }
+
     }
 }

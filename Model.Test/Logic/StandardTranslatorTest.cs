@@ -1,13 +1,13 @@
 ﻿using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Facade.Standard;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Analyzer.Translate;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Operators;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
+using AnsiSoft.Calculator.Model.Logic.Standard;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate
+namespace AnsiSoft.Calculator.Model.Test.Logic
 {
     [TestFixture]
     public class StandardTranslatorTest

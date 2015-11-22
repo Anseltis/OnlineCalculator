@@ -1,11 +1,12 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Facade.Standard;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Analyzer.Translate;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
+using AnsiSoft.Calculator.Model.Logic.Standard;
+using AnsiSoft.Calculator.Model.Reflection;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate
+namespace AnsiSoft.Calculator.Model.Test.Logic
 {
     [TestFixture]
     public class StandardLinkerTest
@@ -21,7 +22,8 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate
             var lexical = new LexicalAnalyzer(StandardProcessorBuilder.LexicalRules);
             var syntactic = new SyntacticAnalyzer(StandardProcessorBuilder.SyntacticRules);
             var translator = new Translator(StandardProcessorBuilder.TranslateRules);
-            var linker = new Linker(StandardProcessorBuilder.LinkerRules, StandardProcessorBuilder.LinkedLibrary);
+            var linkedLibrary = new LinkedLibrary(typeof(StandardProcessorBuilder.LinkedMath));
+            var linker = new Linker(StandardProcessorBuilder.LinkerRules, linkedLibrary);
             Assert.DoesNotThrow(
                 () =>
                 {
@@ -44,7 +46,8 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate
             var lexical = new LexicalAnalyzer(StandardProcessorBuilder.LexicalRules);
             var syntactic = new SyntacticAnalyzer(StandardProcessorBuilder.SyntacticRules);
             var translator = new Translator(StandardProcessorBuilder.TranslateRules);
-            var linker = new Linker(StandardProcessorBuilder.LinkerRules, StandardProcessorBuilder.LinkedLibrary);
+            var linkedLibrary = new LinkedLibrary(typeof(StandardProcessorBuilder.LinkedMath));
+            var linker = new Linker(StandardProcessorBuilder.LinkerRules, linkedLibrary);
 
             var tokens = lexical.Parse(text);
             var tree = syntactic.Parse(tokens, StandardProcessorBuilder.SyntacticTarget);

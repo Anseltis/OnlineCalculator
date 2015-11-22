@@ -1,11 +1,13 @@
 ﻿using System;
 using AnsiSoft.Calculator.Model.Analyzer.Facade;
-using AnsiSoft.Calculator.Model.Analyzer.Facade.Standard;
 using AnsiSoft.Calculator.Model.Interface.Facade;
+using AnsiSoft.Calculator.Model.Logic;
+using AnsiSoft.Calculator.Model.Logic.Standard;
+using AnsiSoft.Calculator.Model.Reflection;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Features
+namespace AnsiSoft.Calculator.Model.Test.Features
 {
     [Binding, Scope(Feature = "Calculator")]
     public class CalculatorSteps
@@ -17,7 +19,8 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Features
         [Given(@"I have standard processor with standart rules")]
         public void GivenIHaveStandardProcessorWithStandartRules()
         {
-            var processorBuilder = StandardProcessorBuilder.CreateProcessorBuilder();
+            var linkedLibrary = new LinkedLibrary(typeof (StandardProcessorBuilder.LinkedMath));
+            var processorBuilder = StandardProcessorBuilder.CreateProcessorBuilder(linkedLibrary);
             Processor = new Processor(processorBuilder);
         }
 

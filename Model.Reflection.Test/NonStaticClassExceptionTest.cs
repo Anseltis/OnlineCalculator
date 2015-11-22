@@ -1,8 +1,6 @@
-﻿using System.Runtime.InteropServices;
-using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Exceptions
+namespace AnsiSoft.Calculator.Model.Reflection.Test
 {
     [TestFixture]
     public class NonStaticClassExceptionTest

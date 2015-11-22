@@ -1,7 +1,8 @@
-﻿using AnsiSoft.Calculator.Model.Interface.Facade;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Facade;
+using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Facade
+namespace AnsiSoft.Calculator.Model.Logic
 {
     /// <summary>
     /// Class for create <see cref="Processor"/> class

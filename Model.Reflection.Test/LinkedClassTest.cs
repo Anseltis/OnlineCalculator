@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Linked
+namespace AnsiSoft.Calculator.Model.Reflection.Test
 {
     [TestFixture]
     public class LinkedClassTest

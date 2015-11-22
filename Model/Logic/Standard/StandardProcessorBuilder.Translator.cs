@@ -9,7 +9,7 @@ using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Facade.Standard
+namespace AnsiSoft.Calculator.Model.Logic.Standard
 {
     /// <summary>
     /// Class for create processor build with standard preference

@@ -3,7 +3,7 @@ using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Facade.Standard
+namespace AnsiSoft.Calculator.Model.Logic.Standard
 {
     /// <summary>
     /// Class for create processor build with standard preference

@@ -2,12 +2,6 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using AnsiSoft.Calculator.Model.Analyzer.Facade;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes;
-using AnsiSoft.Calculator.Model.Analyzer.Translate;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using NUnit.Framework;
@@ -18,18 +12,22 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Facade
     [TestFixture]
     public class ProcessorTest
     {
+        private IProcessorBuilder CreateProcessorBuilderStub()
+        {
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.LexicalAnalyzer = MockRepository.GenerateStub<ILexicalAnalyzer>();
+            processorBuilder.SyntacticAnalyzer = MockRepository.GenerateStub<ISyntacticAnalyzer>();
+            processorBuilder.SyntacticTarget = MockRepository.GenerateStub<ISyntacticNodeType>();
+            processorBuilder.Translator = MockRepository.GenerateStub<ITranslator>();
+            processorBuilder.Linker = MockRepository.GenerateStub<ILinker>();
+            processorBuilder.Compilator = MockRepository.GenerateStub<ICompilator>();
+            return processorBuilder;
+        }
         [Test]
         public void Constructor_Builder_SameProperty()
         {
-            var processorBuilder = new ProcessorBuilder()
-            {
-                LexicalAnalyzer = MockRepository.GenerateStub<ILexicalAnalyzer>(),
-                SyntacticAnalyzer = MockRepository.GenerateStub<ISyntacticAnalyzer>(),
-                SyntacticTarget = MockRepository.GenerateStub<ISyntacticNodeType>(),
-                Translator = MockRepository.GenerateStub<ITranslator>(),
-                Linker = MockRepository.GenerateStub<ILinker>(),
-                Compilator = MockRepository.GenerateStub<ICompilator>()
-            };
+            var processorBuilder = CreateProcessorBuilderStub();
+
             var processor = new Processor(processorBuilder);
             Assert.That(processor.LexicalAnalyzer, Is.SameAs(processorBuilder.LexicalAnalyzer));
             Assert.That(processor.SyntacticAnalyzer, Is.SameAs(processorBuilder.SyntacticAnalyzer));
@@ -66,15 +64,14 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Facade
             var compilator = MockRepository.GenerateMock<ICompilator>();
             compilator.Expect(c => c.CreateExpression(linkedTree)).Return(expression);
 
-            var processorBuilder = new ProcessorBuilder()
-            {
-                LexicalAnalyzer = lexicalAnalyzer,
-                SyntacticAnalyzer = syntacticAnalyzer,
-                SyntacticTarget = syntacticTarget,
-                Translator = translator,
-                Linker = linker,
-                Compilator = compilator
-            };
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.LexicalAnalyzer = lexicalAnalyzer;
+            processorBuilder.SyntacticAnalyzer = syntacticAnalyzer;
+            processorBuilder.SyntacticTarget = syntacticTarget;
+            processorBuilder.Translator = translator;
+            processorBuilder.Linker = linker;
+            processorBuilder.Compilator = compilator;
+
             var processor = new Processor(processorBuilder);
             var result = processor.Calculate(text);
 
@@ -86,5 +83,67 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Facade
             linker.VerifyAllExpectations();
             compilator.VerifyAllExpectations();
         }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Constructor_NullBuilder_Throwexception()
+        {
+            new Processor(null);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Constructor_NullLexicalAnalyzer_ThrowException()
+        {
+            var processorBuilder = CreateProcessorBuilderStub();
+            processorBuilder.LexicalAnalyzer = null;
+            new Processor(processorBuilder);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Constructor_NullSyntacticAnalyzer_ThrowException()
+        {
+            var processorBuilder = CreateProcessorBuilderStub();
+            processorBuilder.SyntacticAnalyzer = null;
+            new Processor(processorBuilder);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Constructor_NullLSyntacticTarget_ThrowException()
+        {
+            var processorBuilder = CreateProcessorBuilderStub();
+            processorBuilder.SyntacticTarget= null;
+            new Processor(processorBuilder);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Constructor_NullTranslator_ThrowException()
+        {
+            var processorBuilder = CreateProcessorBuilderStub();
+            processorBuilder.Translator = null;
+            new Processor(processorBuilder);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Constructor_NullLinker_ThrowException()
+        {
+            var processorBuilder = CreateProcessorBuilderStub();
+            processorBuilder.Linker = null;
+            new Processor(processorBuilder);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Constructor_NullCompilator_ThrowException()
+        {
+            var processorBuilder = CreateProcessorBuilderStub();
+            processorBuilder.Compilator = null;
+            new Processor(processorBuilder);
+        }
+
     }
 }

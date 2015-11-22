@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
-using AnsiSoft.Calculator.Model.Interface;
 using AnsiSoft.Calculator.Model.Interface.Facade;
+using AnsiSoft.Calculator.Model.ReflectionTool;
 
-namespace AnsiSoft.Calculator.Model.Analyzer
+namespace AnsiSoft.Calculator.Model.Reflection
 {
     /// <summary>
     /// Class for external source of resolving constants and functions
@@ -19,12 +18,10 @@ namespace AnsiSoft.Calculator.Model.Analyzer
         public MethodInfo FindMethod(string name, int argumentCount) => 
             FindMethodSignature(name, argumentCount, CheckMethodSignature);
 
-        public PropertyInfo FindProperty(string name)
-        {
-            return Type.GetProperties()
-                .Where(p => p.PropertyType == typeof(double) && p.GetMethod.IsStatic)
+        public PropertyInfo FindProperty(string name) =>
+            Type.GetProperties()
+                .Where(p => p.PropertyType == typeof (double) && p.GetMethod.IsStatic)
                 .FirstOrDefault(p => p.Name == name);
-        }
         #endregion
 
         /// <summary>
@@ -98,8 +95,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer
                 throw new ArgumentNullException(nameof(type));
             }
 
-            var isStatic = type.IsAbstract && type.IsSealed;
-            if (!isStatic)
+            if (!type.IsStatic())
             {
                 throw new NonStaticClassException(type);
             }

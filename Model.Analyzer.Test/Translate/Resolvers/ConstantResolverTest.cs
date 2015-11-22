@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
+using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using NUnit.Framework;
+using Rhino.Mocks;
+using static AnsiSoft.Calculator.Model.ReflectionTool.ReflectionHelper;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
 {
@@ -16,15 +18,6 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
         /// </summary>
         private static class LinkedMath
         {
-            public static double Sin(double alpha) => Math.Sin(alpha);
-            public static double Cos(double alpha) => Math.Cos(alpha);
-
-            public static double Min(double first, params double[] args) =>
-                Enumerable.Repeat(first, 1).Concat(args).Min();
-
-            public static double Max(double first, params double[] args) =>
-                Enumerable.Repeat(first, 1).Concat(args).Max();
-
             public static double PI { get; }
 
             static LinkedMath()
@@ -37,7 +30,8 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
         public void Resolve_ExistConstant_ResolvedTerm()
         {
             var children = Enumerable.Empty<ISyntacticNode>();
-            var linkedClass = new LinkedLibrary(typeof (LinkedMath));
+            var linkedClass = MockRepository.GenerateStub<ILinkedLibrary>();
+            linkedClass.Stub(lc => lc.FindProperty("PI")).Return(PropertyOf(() => LinkedMath.PI));
             var term = new ConstantDeclarationTerm("PI");
 
             var resolver = new ConstantResolver();
@@ -51,10 +45,11 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
         }
 
         [Test]
-        public void Resolve_AbsentConstant_Null()
+        public void Resolve_NullConstant_Null()
         {
             var children = Enumerable.Empty<ISyntacticNode>();
-            var linkedClass = new LinkedLibrary(typeof(LinkedMath));
+            var linkedClass = MockRepository.GenerateStub<ILinkedLibrary>();
+            linkedClass.Stub(lc => lc.FindProperty("PI")).Return(null);
             var term = new ConstantDeclarationTerm("Pi");
 
             var resolver = new ConstantResolver();
@@ -62,19 +57,5 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
 
             Assert.That(resolvedTerm, Is.Null);
         }
-
-        [Test]
-        public void Resolve_Function_Null()
-        {
-            var children = Enumerable.Empty<ISyntacticNode>();
-            var linkedClass = new LinkedLibrary(typeof(LinkedMath));
-            var term = new ConstantDeclarationTerm("Sin");
-
-            var resolver = new ConstantResolver();
-            var resolvedTerm = resolver.Resolve(term, children, linkedClass);
-
-            Assert.That(resolvedTerm, Is.Null);
-        }
-
     }
 }

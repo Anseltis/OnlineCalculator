@@ -1,8 +1,4 @@
 ﻿using System;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes;
-using AnsiSoft.Calculator.Model.Analyzer.Translate;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
@@ -56,6 +52,11 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Facade
         /// <exception cref="ArgumentNullException">Throw if builder properties are null</exception>
         public Processor(IProcessorBuilder builder)
         {
+            if (builder == null)
+            {
+                throw new ArgumentNullException(nameof(builder));
+            }
+
             if (builder.LexicalAnalyzer == null)
             {
                 throw new ArgumentNullException(nameof(builder.LexicalAnalyzer));

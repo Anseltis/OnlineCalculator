@@ -4,21 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39BE6E0B-8B89-4588-916C-C9DC58CE62BD}</ProjectGuid>
+    <ProjectGuid>{E36D4188-69CE-4FB5-9DA7-C0492009D842}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnsiSoft.Calculator.Model</RootNamespace>
-    <AssemblyName>Model</AssemblyName>
+    <RootNamespace>AnsiSoft.Calculator.Model.Reflection.Test</RootNamespace>
+    <AssemblyName>Model.Reflection.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,25 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\ProcessorBuilder.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Lexical.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Linker.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Syntactic.cs" />
-    <Compile Include="Logic\Standard\StandardProcessorBuilder.Translator.cs" />
+    <Compile Include="LinkedClassTest.cs" />
+    <Compile Include="NonStaticClassExceptionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model.Analyzer\Model.Analyzer.csproj">
-      <Project>{25f53d7e-2cf6-487a-bf02-4e3b0d732b99}</Project>
-      <Name>Model.Analyzer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model.Interface\Model.Interface.csproj">
       <Project>{e449b572-a6cf-4516-bc78-4cb4e249f7d6}</Project>
       <Name>Model.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model.ReflectionTool\Model.ReflectionTool.csproj">
+      <Project>{047cf62f-fc68-4d75-88e1-9ac5cd415bc5}</Project>
+      <Name>Model.ReflectionTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.Reflection\Model.Reflection.csproj">
+      <Project>{a9e635bf-44de-41b6-8b0c-e4addaf51846}</Project>
+      <Name>Model.Reflection</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
