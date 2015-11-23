@@ -82,7 +82,6 @@ namespace AnsiSoft.Calculator.Model.Logic.Standard
                                 var term = new NumberTerm(
                                     double.Parse(tokenNode.Token.Lexeme, CultureInfo.InvariantCulture));
                                 return new TermSyntacticNode(term, Enumerable.Empty<ISyntacticNode>());
-
                             }
                             if (node.IsBlockOf(nameof(SyntacticRuleType.UnaryExprIsIdentifierAndLBrAndTupleAndRBr)))
                             {

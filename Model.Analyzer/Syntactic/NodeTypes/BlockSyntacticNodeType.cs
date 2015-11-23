@@ -39,7 +39,6 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes
                             new BlockSyntacticNode(rec.Block, rec.Iteration.Nodes),
                             rec.Iteration.TokenNodes));
         }
-
         #endregion
     }
 }

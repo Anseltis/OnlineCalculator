@@ -75,7 +75,7 @@
     <Compile Include="Logic\Standard\StandardCompilatorTest.cs" />
     <Compile Include="Logic\Standard\StandardLexicalAnalyzerTest.cs" />
     <Compile Include="Logic\Standard\StandardLinkerTest.cs" />
-    <Compile Include="Logic\Standard\StandardLinkedProcessorTest.cs" />
+    <Compile Include="Logic\Standard\StandardRuntimeLinkedProcessorTest.cs" />
     <Compile Include="Logic\Standard\StandardProcessorFactoryTest.cs" />
     <Compile Include="Logic\Standard\StandardProcessorTest.cs" />
     <Compile Include="Logic\Standard\StandardSyntacticAnalyzerTest.cs" />

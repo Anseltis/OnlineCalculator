@@ -9,7 +9,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.ParseResult
     /// </summary>
     public sealed class SyntacticParseIterateResult : ISyntacticParseIterateResult
     {
-
+        #region implement ISyntacticParseIterateResult
         /// <summary>
         /// Result nodes for read element of syntactic rules 
         /// </summary>
@@ -24,6 +24,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.ParseResult
         /// Non-read token sequence
         /// </summary>
         public IEnumerable<ITokenSyntacticNode> TokenNodes { get; }
+        #endregion
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SyntacticParseIterateResult"/> class.

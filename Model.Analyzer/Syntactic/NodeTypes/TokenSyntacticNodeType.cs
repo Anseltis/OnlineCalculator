@@ -13,7 +13,6 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes
     public sealed class TokenSyntacticNodeType<T> : ISyntacticNodeType where T : IToken
     {
         #region implement ISyntacticNodeType
-
         public IEnumerable<ISyntacticParseResult> Parse(IEnumerable<ITokenSyntacticNode> tokenNodes,
             IEnumerable<IBlock> rules)
         {
@@ -24,7 +23,6 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes
             }
 
         }
-
         #endregion
     }
 }

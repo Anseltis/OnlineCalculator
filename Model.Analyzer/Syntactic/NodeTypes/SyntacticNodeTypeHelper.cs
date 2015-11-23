@@ -14,19 +14,15 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes
         /// </summary>
         /// <typeparam name="T">Lexical token</typeparam>
         /// <returns>Instance of <see cref="TokenSyntacticNodeType{T}"/> class.</returns>
-        public static TokenSyntacticNodeType<T> TokenOf<T>() where T : IToken
-        {
-            return new TokenSyntacticNodeType<T>();
-        }
+        public static TokenSyntacticNodeType<T> TokenOf<T>() where T : IToken => 
+            new TokenSyntacticNodeType<T>();
 
         /// <summary>
         /// Create non-terminal symbol of context-free grammar.
         /// </summary>
         /// <typeparam name="T">Syntactic block</typeparam>
         /// <returns>Instance of <see cref="BlockSyntacticNodeType{T}"/> class.</returns>
-        public static BlockSyntacticNodeType<T> BlockOf<T>() where T : IBlock
-        {
-            return new BlockSyntacticNodeType<T>();
-        }
+        public static BlockSyntacticNodeType<T> BlockOf<T>() where T : IBlock => 
+            new BlockSyntacticNodeType<T>();
     }
 }

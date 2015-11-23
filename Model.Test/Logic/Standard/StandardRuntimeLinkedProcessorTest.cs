@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
     [TestFixture]
-    public class StandardLinkedProcessorTest
+    public class StandardRuntimeLinkedProcessorTest
     {
         private string LinkedText { get; } = @"
 
