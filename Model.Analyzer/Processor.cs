@@ -11,17 +11,10 @@ namespace AnsiSoft.Calculator.Model.Analyzer
     public sealed class Processor : IProcessor
     {
         #region implement IProcessor
-        public ILexicalAnalyzer LexicalAnalyzer { get; }
-        public ISyntacticAnalyzer SyntacticAnalyzer { get;}
-        public ISyntacticNodeType SyntacticTarget { get; }
-        public ITranslator Translator { get; }
-        public ILinker Linker { get; }
-        public ICompilator Compilator { get;  }
-
         /// <summary>
-        /// Calculate expression text.
+        /// Calculate text expression.
         /// </summary>
-        /// <param name="text">Expression text</param>
+        /// <param name="text">Text expression</param>
         /// <returns>Result value</returns>
         /// <exception cref="RuntimeCalculatorException">Thrown when raise runtime error.</exception>
         public double Calculate(string text)
@@ -44,6 +37,36 @@ namespace AnsiSoft.Calculator.Model.Analyzer
             }
         }
         #endregion
+
+        /// <summary>
+        /// Lexical analyzer
+        /// </summary>
+        public ILexicalAnalyzer LexicalAnalyzer { get; }
+
+        /// <summary>
+        /// Syntactic analyzer
+        /// </summary>
+        public ISyntacticAnalyzer SyntacticAnalyzer { get; }
+
+        /// <summary>
+        /// Target for syntactic analyzer
+        /// </summary>
+        public ISyntacticNodeType SyntacticTarget { get; }
+
+        /// <summary>
+        /// Translator 
+        /// </summary>
+        public ITranslator Translator { get; }
+
+        /// <summary>
+        /// Identifier reslver
+        /// </summary>
+        public ILinker Linker { get; }
+
+        /// <summary>
+        /// Expression builder
+        /// </summary>
+        public ICompilator Compilator { get; }
 
         /// <summary>
         ///  Initializes a new instance of the <see cref="Processor"/> class.

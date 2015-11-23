@@ -38,10 +38,10 @@ namespace AnsiSoft.Calculator.Model.Interface.Facade
         ICompilator Compilator { get; }
 
         /// <summary>
-        /// 
+        /// Calculate text expression
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">Text expression</param>
+        /// <returns>Result value</returns>
         double Calculate(string text);
     }
 }
