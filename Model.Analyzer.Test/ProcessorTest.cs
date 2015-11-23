@@ -7,7 +7,7 @@ using AnsiSoft.Calculator.Model.Interface.Nodes;
 using NUnit.Framework;
 using Rhino.Mocks;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Facade
+namespace AnsiSoft.Calculator.Model.Analyzer.Test
 {
     [TestFixture]
     public class ProcessorTest

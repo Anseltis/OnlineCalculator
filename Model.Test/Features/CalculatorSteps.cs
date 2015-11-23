@@ -1,7 +1,6 @@
 ﻿using System;
-using AnsiSoft.Calculator.Model.Analyzer.Facade;
+using AnsiSoft.Calculator.Model.Analyzer;
 using AnsiSoft.Calculator.Model.Interface.Facade;
-using AnsiSoft.Calculator.Model.Logic;
 using AnsiSoft.Calculator.Model.Logic.Standard;
 using AnsiSoft.Calculator.Model.Reflection;
 using NUnit.Framework;
@@ -19,8 +18,8 @@ namespace AnsiSoft.Calculator.Model.Test.Features
         [Given(@"I have standard processor with standart rules")]
         public void GivenIHaveStandardProcessorWithStandartRules()
         {
-            var linkedLibrary = new LinkedLibrary(typeof (StandardProcessorBuilder.LinkedMath));
-            var processorBuilder = StandardProcessorBuilder.CreateProcessorBuilder(linkedLibrary);
+            var linkedLibraryFactory = new StaticLinkedLibraryFactory(typeof (StandardProcessorBuilder.LinkedMath));
+            var processorBuilder = StandardProcessorBuilder.CreateProcessorBuilder(linkedLibraryFactory);
             Processor = new Processor(processorBuilder);
         }
 

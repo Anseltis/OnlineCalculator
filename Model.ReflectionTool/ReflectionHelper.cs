@@ -40,5 +40,6 @@ namespace AnsiSoft.Calculator.Model.ReflectionTool
         /// <returns>True if class is abstract</returns>
         public static bool IsStatic(this Type type) =>
             type.IsAbstract && type.IsSealed;
+
     }
 }

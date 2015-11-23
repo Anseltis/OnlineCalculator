@@ -14,16 +14,16 @@ namespace AnsiSoft.Calculator.Model.Logic.Standard
         /// <summary>
         /// Create <see cref="ProcessorBuilder"/> class with standard preferences.
         /// </summary>
-        /// <param name="linkedLibrary">Linked class</param>
+        /// <param name="linkedLibraryFactory">Linked class</param>
         /// <returns>Builder for processor</returns>
-        public static IProcessorBuilder CreateProcessorBuilder(ILinkedLibrary linkedLibrary) =>
+        public static IProcessorBuilder CreateProcessorBuilder(ILinkedLibraryFactory linkedLibraryFactory) =>
             new ProcessorBuilder()
             {
                 LexicalAnalyzer = new LexicalAnalyzer(LexicalRules),
                 SyntacticAnalyzer = new SyntacticAnalyzer(SyntacticRules),
                 SyntacticTarget = SyntacticTarget,
                 Translator = new Translator(TranslateRules),
-                Linker = new Linker(LinkerRules, linkedLibrary),
+                Linker = new Linker(LinkerRules, linkedLibraryFactory.CreateLinkedLibrary()),
                 Compilator = new Compilator()
             };
     }

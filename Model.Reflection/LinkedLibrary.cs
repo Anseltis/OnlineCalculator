@@ -19,7 +19,7 @@ namespace AnsiSoft.Calculator.Model.Reflection
             FindMethodSignature(name, argumentCount, CheckMethodSignature);
 
         public PropertyInfo FindProperty(string name) =>
-            Type.GetProperties()
+            TypeLazy.Value.GetProperties()
                 .Where(p => p.PropertyType == typeof (double) && p.GetMethod.IsStatic)
                 .FirstOrDefault(p => p.Name == name);
         #endregion
@@ -27,7 +27,7 @@ namespace AnsiSoft.Calculator.Model.Reflection
         /// <summary>
         /// Linked static class
         /// </summary>
-        public Type Type { get; }
+        public Lazy<Type> TypeLazy { get; }
 
         /// <summary>
         /// Check signature param method.
@@ -78,7 +78,7 @@ namespace AnsiSoft.Calculator.Model.Reflection
         /// <returns>MethodInfo of found class or null</returns>
         public MethodInfo FindMethodSignature(string name, int argumentCount, Func<MethodInfo, int, bool> signaturePredicate)
         {
-            return Type.GetMethods()
+            return TypeLazy.Value.GetMethods()
                 .Where(method => method.Name == name)
                 .Where(method => method.IsStatic && method.ReturnType == typeof(double))
                 .FirstOrDefault(m => signaturePredicate(m, argumentCount));
@@ -87,20 +87,15 @@ namespace AnsiSoft.Calculator.Model.Reflection
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkedLibrary"/> class.
         /// </summary>
-        /// <param name="type">Linked class</param>
-        public LinkedLibrary(Type type)
+        /// <param name="typeLazy">Linked class in lazy type</param>
+        public LinkedLibrary(Lazy<Type> typeLazy)
         {
-            if (type == null)
+            if (typeLazy == null)
             {
-                throw new ArgumentNullException(nameof(type));
+                throw new ArgumentNullException(nameof(typeLazy));
             }
 
-            if (!type.IsStatic())
-            {
-                throw new NonStaticClassException(type);
-            }
-
-            Type = type;
+            TypeLazy = typeLazy;
         }
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System;
+using AnsiSoft.Calculator.Model.Analyzer.Facade;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Facade
+namespace AnsiSoft.Calculator.Model.Analyzer
 {
     /// <summary>
     /// Facade class for calculator

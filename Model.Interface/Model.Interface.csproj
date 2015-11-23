@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facade\ILinkedLibraryFactory.cs" />
     <Compile Include="Facade\IProcessorBuilder.cs" />
+    <Compile Include="Facade\IProcessorFactory.cs" />
     <Compile Include="Nodes\IBlock.cs" />
     <Compile Include="Facade\ICompilator.cs" />
     <Compile Include="Facade\ILexicalAnalyzer.cs" />

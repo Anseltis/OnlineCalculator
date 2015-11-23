@@ -1,4 +1,5 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Facade;
+﻿using AnsiSoft.Calculator.Model.Analyzer;
+using AnsiSoft.Calculator.Model.Analyzer.Facade;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 

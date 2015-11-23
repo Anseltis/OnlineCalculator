@@ -1,7 +1,6 @@
 ﻿using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Analyzer.Translate;
-using AnsiSoft.Calculator.Model.Logic;
 using AnsiSoft.Calculator.Model.Logic.Standard;
 using AnsiSoft.Calculator.Model.Reflection;
 using NUnit.Framework;
@@ -21,12 +20,13 @@ namespace AnsiSoft.Calculator.Model.Test.Logic
         [TestCase("1/0", double.PositiveInfinity)]
         public void Compile_Expressiion_RightResult(string text, double value)
         {
-            
+            var linkedLibraryFactory = new StaticLinkedLibraryFactory(typeof(StandardProcessorBuilder.LinkedMath));
+
             var lexical = new LexicalAnalyzer(StandardProcessorBuilder.LexicalRules);
             var syntactic = new SyntacticAnalyzer(StandardProcessorBuilder.SyntacticRules);
             var translator = new Translator(StandardProcessorBuilder.TranslateRules);
             var linker = new Linker(StandardProcessorBuilder.LinkerRules, 
-                new LinkedLibrary(typeof(StandardProcessorBuilder.LinkedMath)));
+                linkedLibraryFactory.CreateLinkedLibrary());
             var tokens = lexical.Parse(text);
             var tree = syntactic.Parse(tokens, StandardProcessorBuilder.SyntacticTarget);
             var translatedTree = translator.Translate(tree);

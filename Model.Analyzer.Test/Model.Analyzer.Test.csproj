@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facade\ProcessorTest.cs" />
+    <Compile Include="ProcessorTest.cs" />
     <Compile Include="Lexical\CompiledLexicalRuleTest.cs" />
     <Compile Include="Lexical\Exceptions\WrongLexicalRuleExceptionTest.cs" />
     <Compile Include="Lexical\Exceptions\LexicalParsingExceptionTest.cs" />

@@ -15,7 +15,14 @@ namespace AnsiSoft.Calculator.Model.Reflection
         public NonStaticClassException(Type linkedClass) :
             base($"Class {linkedClass.FullName} is not static.")
         {
-            
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NonStaticClassException"/> class.
+        /// </summary>
+        public NonStaticClassException() : base($"There no static class")
+        {
+        }
+
     }
 }

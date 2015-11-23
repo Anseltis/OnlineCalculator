@@ -22,8 +22,9 @@ namespace AnsiSoft.Calculator.Model.Test.Logic
             var lexical = new LexicalAnalyzer(StandardProcessorBuilder.LexicalRules);
             var syntactic = new SyntacticAnalyzer(StandardProcessorBuilder.SyntacticRules);
             var translator = new Translator(StandardProcessorBuilder.TranslateRules);
-            var linkedLibrary = new LinkedLibrary(typeof(StandardProcessorBuilder.LinkedMath));
-            var linker = new Linker(StandardProcessorBuilder.LinkerRules, linkedLibrary);
+
+            var linkedLibraryFactory = new StaticLinkedLibraryFactory(typeof(StandardProcessorBuilder.LinkedMath));
+            var linker = new Linker(StandardProcessorBuilder.LinkerRules, linkedLibraryFactory.CreateLinkedLibrary());
             Assert.DoesNotThrow(
                 () =>
                 {
@@ -46,8 +47,8 @@ namespace AnsiSoft.Calculator.Model.Test.Logic
             var lexical = new LexicalAnalyzer(StandardProcessorBuilder.LexicalRules);
             var syntactic = new SyntacticAnalyzer(StandardProcessorBuilder.SyntacticRules);
             var translator = new Translator(StandardProcessorBuilder.TranslateRules);
-            var linkedLibrary = new LinkedLibrary(typeof(StandardProcessorBuilder.LinkedMath));
-            var linker = new Linker(StandardProcessorBuilder.LinkerRules, linkedLibrary);
+            var linkedLibraryFactory = new StaticLinkedLibraryFactory(typeof(StandardProcessorBuilder.LinkedMath));
+            var linker = new Linker(StandardProcessorBuilder.LinkerRules, linkedLibraryFactory.CreateLinkedLibrary());
 
             var tokens = lexical.Parse(text);
             var tree = syntactic.Parse(tokens, StandardProcessorBuilder.SyntacticTarget);
