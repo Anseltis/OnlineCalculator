@@ -5,7 +5,7 @@ using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Logic.Standard;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Test.Logic
+namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
     [TestFixture]
     public class StandardLexicalAnalyzerTest

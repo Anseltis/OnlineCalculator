@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Reflection.Test
 {
     [TestFixture]
-    public class LinkedClassTest
+    public class LinkedLibraryTest
     {
         /// <summary>
         /// Class for resolve external variable and function

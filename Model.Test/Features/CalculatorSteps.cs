@@ -19,8 +19,8 @@ namespace AnsiSoft.Calculator.Model.Test.Features
         public void GivenIHaveStandardProcessorWithStandartRules()
         {
             var linkedLibraryFactory = new StaticLinkedLibraryFactory(typeof (StandardProcessorBuilder.LinkedMath));
-            var processorBuilder = StandardProcessorBuilder.CreateProcessorBuilder(linkedLibraryFactory);
-            Processor = new Processor(processorBuilder);
+            var processorFactory = new StandardProcessorFactory(linkedLibraryFactory);
+            Processor = processorFactory.CreateProcessor();
         }
 
         [When(@"I input expression (.*)")]

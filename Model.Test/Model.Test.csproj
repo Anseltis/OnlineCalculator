@@ -72,13 +72,14 @@
       <DependentUpon>SyntacticValidation.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\SyntacticValidationSteps.cs" />
-    <Compile Include="Logic\StandardCompilatorTest.cs" />
-    <Compile Include="Logic\StandardLexicalAnalyzerTest.cs" />
-    <Compile Include="Logic\StandardLinkerTest.cs" />
-    <Compile Include="Logic\StandardLinkedProcessorTest.cs" />
-    <Compile Include="Logic\StandardProcessorTest.cs" />
-    <Compile Include="Logic\StandardSyntacticAnalyzerTest.cs" />
-    <Compile Include="Logic\StandardTranslatorTest.cs" />
+    <Compile Include="Logic\Standard\StandardCompilatorTest.cs" />
+    <Compile Include="Logic\Standard\StandardLexicalAnalyzerTest.cs" />
+    <Compile Include="Logic\Standard\StandardLinkerTest.cs" />
+    <Compile Include="Logic\Standard\StandardLinkedProcessorTest.cs" />
+    <Compile Include="Logic\Standard\StandardProcessorFactoryTest.cs" />
+    <Compile Include="Logic\Standard\StandardProcessorTest.cs" />
+    <Compile Include="Logic\Standard\StandardSyntacticAnalyzerTest.cs" />
+    <Compile Include="Logic\Standard\StandardTranslatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,9 +115,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Wrong\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

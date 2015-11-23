@@ -48,9 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LinkedClassTest.cs" />
-    <Compile Include="NonStaticClassExceptionTest.cs" />
+    <Compile Include="LinkedLibraryTest.cs" />
+    <Compile Include="Exceptions\NonStaticClassExceptionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuntimeLinkedLibraryFactoryTest.cs" />
+    <Compile Include="StaticLinkedLibraryFactoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model.Interface\Model.Interface.csproj">

@@ -43,7 +43,7 @@
     <Compile Include="LinkedLibrary.cs" />
     <Compile Include="StaticLinkedLibraryFactory.cs" />
     <Compile Include="RuntimeLinkedLibraryFactory.cs" />
-    <Compile Include="NonStaticClassException.cs" />
+    <Compile Include="Exceptions\NonStaticClassException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

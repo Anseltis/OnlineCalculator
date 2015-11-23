@@ -26,9 +26,9 @@ namespace AnsiSoft.Calculator.Model.ReflectionTool
                     return assembly.GetTypes();
                 }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw new RuntimeCompileException(text);
+                throw new RuntimeCompileException(text, exception);
             }
         }
     }

@@ -7,7 +7,7 @@ using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Logic.Standard;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Test.Logic
+namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
 
     [TestFixture]

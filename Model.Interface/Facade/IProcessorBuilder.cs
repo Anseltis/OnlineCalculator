@@ -1,7 +1,6 @@
-﻿using AnsiSoft.Calculator.Model.Interface.Facade;
-using AnsiSoft.Calculator.Model.Interface.Nodes;
+﻿using AnsiSoft.Calculator.Model.Interface.Nodes;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Facade
+namespace AnsiSoft.Calculator.Model.Interface.Facade
 {
     /// <summary>
     /// Interface for help to create processor-like classes

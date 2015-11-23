@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using AnsiSoft.Calculator.Model.Interface.Facade;
+using AnsiSoft.Calculator.Model.Reflection.Exceptions;
 using AnsiSoft.Calculator.Model.ReflectionTool;
 
 namespace AnsiSoft.Calculator.Model.Reflection
@@ -10,10 +11,18 @@ namespace AnsiSoft.Calculator.Model.Reflection
     /// </summary>
     public sealed class RuntimeLinkedLibraryFactory : ILinkedLibraryFactory
     {
+        #region implement ILinkedLibraryFactory
+        /// <summary>
+        /// Create linked library
+        /// </summary>
+        /// <returns>Linked library</returns>
+        public ILinkedLibrary CreateLinkedLibrary() => new LinkedLibrary(TypeLazy);
+        #endregion
+
         /// <summary>
         /// Source code of static class
         /// </summary>
-        public string Text { get; }
+        public string SourceCode { get; }
 
         /// <summary>
         /// Referenced assemblies
@@ -21,17 +30,32 @@ namespace AnsiSoft.Calculator.Model.Reflection
         public string[] Assemblies { get; }
 
         /// <summary>
+        /// Lazy object with the result for safe multithread work
+        /// </summary>
+        public Lazy<Type> TypeLazy { get; }
+
+        /// <summary>
         ///  Initializes a new instance of the <see cref="RuntimeLinkedLibraryFactory"/> class.
         /// </summary>
-        /// <param name="text">Source code</param>
+        /// <param name="sourceCode">Source code</param>
         /// <param name="assemblies">Referenced assemblies</param>
-        public RuntimeLinkedLibraryFactory(string text, string[] assemblies)
+        /// <exception cref="ArgumentNullException">Throw if source code or assemplies are null</exception>
+        public RuntimeLinkedLibraryFactory(string sourceCode, string[] assemblies)
         {
-            Text = text;
+            if (sourceCode == null)
+            {
+                throw new ArgumentNullException(nameof(sourceCode));
+            }
+            if (assemblies == null)
+            {
+                throw new ArgumentNullException(nameof(assemblies));
+            }
+
+            SourceCode = sourceCode;
             Assemblies = assemblies;
             TypeLazy = new Lazy<Type>(() =>
             {
-                var type = CompilerHelper.Compile(Text, Assemblies)
+                var type = CompilerHelper.Compile(SourceCode, Assemblies)
                     .FirstOrDefault(t => t.IsStatic());
 
                 if (type == null)
@@ -43,23 +67,16 @@ namespace AnsiSoft.Calculator.Model.Reflection
             });
         }
 
+        public static string[] StandardAssemblies { get; } = {"System.Core.dll"};
+
         /// <summary>
         ///  Initializes a new instance of the <see cref="RuntimeLinkedLibraryFactory"/> class.
         /// </summary>
-        /// <param name="text">Source code</param>
-        public RuntimeLinkedLibraryFactory(string text) : this(text, new[] { "System.Core.dll" })
+        /// <param name="sourceCode">Source code</param>
+        public RuntimeLinkedLibraryFactory(string sourceCode) : this(sourceCode, StandardAssemblies)
         {
         }
 
-        /// <summary>
-        /// Lazy object with the result for safe multithread work
-        /// </summary>
-        public Lazy<Type> TypeLazy { get; }
 
-        /// <summary>
-        /// Create linked library
-        /// </summary>
-        /// <returns>Linked library</returns>
-        public ILinkedLibrary CreateLinkedLibrary() => new LinkedLibrary(TypeLazy);
     }
 }

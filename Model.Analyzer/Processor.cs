@@ -1,5 +1,4 @@
 ﻿using System;
-using AnsiSoft.Calculator.Model.Analyzer.Facade;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;

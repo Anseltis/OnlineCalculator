@@ -1,9 +1,8 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer;
-using AnsiSoft.Calculator.Model.Logic.Standard;
+﻿using AnsiSoft.Calculator.Model.Logic.Standard;
 using AnsiSoft.Calculator.Model.Reflection;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Test.Logic
+namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
     [TestFixture]
     public class StandardLinkedProcessorTest
@@ -43,8 +42,8 @@ namespace AnsiSoft.Calculator.Model.Test.Logic
         public void Calculate_Expression_TargetValue(string text, double value)
         {
             var linkedLibraryFactory = new RuntimeLinkedLibraryFactory(LinkedText);
-            var processorBuilder = StandardProcessorBuilder.CreateProcessorBuilder(linkedLibraryFactory);
-            var processor = new Processor(processorBuilder);
+            var processorFactory = new StandardProcessorFactory(linkedLibraryFactory);
+            var processor = processorFactory.CreateProcessor();
             Assert.That(processor.Calculate(text), Is.EqualTo(value).Within(1e-7));
         }
     }

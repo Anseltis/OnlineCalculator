@@ -5,7 +5,7 @@ using AnsiSoft.Calculator.Model.Logic.Standard;
 using AnsiSoft.Calculator.Model.Reflection;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Test.Logic
+namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
     [TestFixture]
     public class StandardCompilatorTest

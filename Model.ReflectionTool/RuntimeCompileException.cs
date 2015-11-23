@@ -17,7 +17,9 @@ namespace AnsiSoft.Calculator.Model.ReflectionTool
         ///  Initializes a new instance of the <see cref="RuntimeCompileException"/> class.
         /// </summary>
         /// <param name="sourceCode">Source code</param>
-        public RuntimeCompileException(string sourceCode) : base("Error during runtime compilation")
+        /// <param name="innerException">Inner exception</param>
+        public RuntimeCompileException(string sourceCode, Exception innerException) : 
+            base("Error during runtime compilation", innerException)
         {
             SourceCode = sourceCode;
         }

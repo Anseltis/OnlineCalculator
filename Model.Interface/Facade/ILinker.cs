@@ -8,7 +8,7 @@ namespace AnsiSoft.Calculator.Model.Interface.Facade
     public interface ILinker
     {
         /// <summary>
-        /// Resolve constant and function in translated sysntactic tree
+        /// Resolve constant and function in translated sysntactic tree.
         /// </summary>
         /// <param name="node">Root of translated tree</param>
         /// <returns>Resolving tree</returns>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AnsiSoft.Calculator.Model.Reflection
+namespace AnsiSoft.Calculator.Model.Reflection.Exceptions
 {
     /// <summary>
     /// Exception class of non-static linked class

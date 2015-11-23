@@ -26,7 +26,7 @@ namespace AnsiSoft.Calculator.Model.ReflectionTool.Test
         [ExpectedException(typeof(InvalidCastException))]
         public void PropertyOf_WrongExpression_ThrowException()
         {
-            var propertyInfo = PropertyOf(() => 1);
+            PropertyOf(() => 1);
         }
 
         [Test]
@@ -42,7 +42,7 @@ namespace AnsiSoft.Calculator.Model.ReflectionTool.Test
         [ExpectedException(typeof(InvalidCastException))]
         public void MethodOf_WrongExpression_ThrowException()
         {
-            var methodInfo = MethodOf(() => 0);
+            MethodOf(() => 0);
         }
 
         [Test]
