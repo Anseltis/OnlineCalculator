@@ -23,7 +23,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Exceptions
         public void Message_SomeIdentifier_CannotResolve()
         {
             var exception = new CannotResolveIdentifierException("myFunc");
-            Assert.That(exception.Message, Is.EqualTo("Does not resolve identifier <<myFunc>>"));
+            Assert.That(exception.Message, Is.EqualTo("Does not resolve identifier 'myFunc'"));
         }
     }
 }

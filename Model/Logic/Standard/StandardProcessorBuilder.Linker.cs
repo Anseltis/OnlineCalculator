@@ -4,6 +4,8 @@ using System.Linq;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Facade;
+using AnsiSoft.Calculator.Model.Interface.Resolvers;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 
 namespace AnsiSoft.Calculator.Model.Logic.Standard
 {

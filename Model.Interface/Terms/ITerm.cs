@@ -1,4 +1,4 @@
-﻿namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
+﻿namespace AnsiSoft.Calculator.Model.Interface.Terms
 {
     /// <summary>
     /// Interface for minimal translation block

@@ -12,7 +12,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.Exceptions
         /// Initializes a new instance of the <see cref="SyntacticParseException"/> class.
         /// </summary>
         /// <param name="expression"></param>
-        public SyntacticParseException(string expression) : base($"Syntactic error in <<{expression}>>")
+        public SyntacticParseException(string expression) : base($"Syntactic error in '{expression}'")
         {
         }
     }

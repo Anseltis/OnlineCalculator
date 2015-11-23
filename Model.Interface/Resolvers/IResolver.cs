@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
-using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
-using AnsiSoft.Calculator.Model.Interface;
+﻿using System.Collections.Generic;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers
+namespace AnsiSoft.Calculator.Model.Interface.Resolvers
 {
     /// <summary>
     /// Interface for resolve declaration term in syntactic tree
@@ -20,6 +17,6 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers
         /// <param name="children">Rosolved children of the term</param>
         /// <param name="linkedLibrary">Resolving class</param>
         /// <returns>Resolver term</returns>
-        ILinkedTerm Resolve(IDeclarationTerm term, IEnumerable<ISyntacticNode> children, ILinkedLibrary linkedLibrary);
+        IResolvedTerm Resolve(IDeclarationTerm term, IEnumerable<ISyntacticNode> children, ILinkedLibrary linkedLibrary);
     }
 }

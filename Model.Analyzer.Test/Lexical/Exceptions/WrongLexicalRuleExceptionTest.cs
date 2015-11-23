@@ -10,7 +10,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical.Exceptions
         public void Message_2at4_WrongLexical2at4()
         {
             var exception = new WrongLexicalRuleException("2@4");
-            Assert.That(exception.Message, Is.EqualTo("Wrong lexical rule 2@4"));
+            Assert.That(exception.Message, Is.EqualTo("Wrong lexical rule '2@4'"));
         }
 
         [Test]

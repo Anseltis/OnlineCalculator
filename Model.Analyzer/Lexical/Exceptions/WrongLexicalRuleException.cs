@@ -12,7 +12,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions
         ///  Initializes a new instance of the <see cref="WrongLexicalRuleException"/> class.
         /// </summary>
         /// <param name="pattern">Expression pattern</param>
-        public WrongLexicalRuleException(string pattern) : base($"Wrong lexical rule {pattern}")
+        public WrongLexicalRuleException(string pattern) : base($"Wrong lexical rule '{pattern}'")
         {
             Pattern = pattern;
         }

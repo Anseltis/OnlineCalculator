@@ -1,14 +1,16 @@
 ﻿using System.Linq.Expressions;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Operators;
+using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
 {
     /// <summary>
     /// Class for unary operation term
     /// </summary>
-    public sealed class UnaryOperatorTerm : ILinkedTerm
+    public sealed class UnaryOperatorTerm : IResolvedTerm
     {
-        #region implement ILinkedTerm
+        #region implement IResolvedTerm
         public Expression CreateExpression(Expression[] children)
         {
             return Operator.CreateExpression(children[0]);

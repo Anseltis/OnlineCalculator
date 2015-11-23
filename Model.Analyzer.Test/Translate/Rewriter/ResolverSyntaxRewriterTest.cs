@@ -8,6 +8,8 @@ using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Resolvers;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 using NUnit.Framework;
 using Rhino.Mocks;
 
@@ -118,7 +120,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Rewriter
             var children = Enumerable.Empty<ISyntacticNode>();
             var linkedClass = MockRepository.GenerateStub<ILinkedLibrary>();
 
-            var linkedTerm = MockRepository.GenerateStub<ILinkedTerm>();
+            var linkedTerm = MockRepository.GenerateStub<IResolvedTerm>();
             var resolver = MockRepository.GenerateStub<IResolver>();
             resolver.Stub(r => r.Resolve(term, children, linkedClass)).Return(linkedTerm);
 

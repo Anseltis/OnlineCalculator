@@ -18,7 +18,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions
         /// </summary>
         /// <param name="expression">Wrong expression</param>
         public LexicalParsingException(string expression) :
-            base($"Can't parse expression {expression}")
+            base($"Can't parse expression '{expression}'")
         {
             Expression = expression;
         }

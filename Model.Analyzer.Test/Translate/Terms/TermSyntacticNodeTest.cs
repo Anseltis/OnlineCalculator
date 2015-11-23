@@ -2,6 +2,7 @@
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 using NUnit.Framework;
 using Rhino.Mocks;
 

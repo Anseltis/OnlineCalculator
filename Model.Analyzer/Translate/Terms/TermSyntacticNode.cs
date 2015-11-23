@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
 {

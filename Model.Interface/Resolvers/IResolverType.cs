@@ -1,6 +1,6 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
+﻿using AnsiSoft.Calculator.Model.Interface.Terms;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers
+namespace AnsiSoft.Calculator.Model.Interface.Resolvers
 {
     /// <summary>
     /// Interface for resolve type

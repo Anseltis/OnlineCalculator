@@ -7,6 +7,8 @@ using AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Resolvers;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate
@@ -32,7 +34,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate
         /// <exception cref="CannotResolveIdentifierException">Error if trnslation tree contain non-term nodes</exception>
         public void CheckResult(ISyntacticNode node) =>
             node.Rewrite(new SyntaxRewriter(
-                nd => !((node as TermSyntacticNode)?.Term is ILinkedTerm),
+                nd => !((node as TermSyntacticNode)?.Term is IResolvedTerm),
                 (nd, ch) => { throw new TranslateException(); }));
         #endregion
 

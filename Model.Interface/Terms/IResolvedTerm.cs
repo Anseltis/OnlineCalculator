@@ -1,11 +1,11 @@
 ﻿using System.Linq.Expressions;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
+namespace AnsiSoft.Calculator.Model.Interface.Terms
 {
     /// <summary>
     /// Interface for term with real linking
     /// </summary>
-    public interface ILinkedTerm : ITerm
+    public interface IResolvedTerm : ITerm
     {
         /// <summary>
         /// Create expression for this term.

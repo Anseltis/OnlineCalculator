@@ -10,6 +10,9 @@ namespace Web.Controllers
     /// </summary>
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Calculator instance
+        /// </summary>
         public IProcessor Processor { get; }
         /// <summary>
         /// Create new <see cref="HomeController" /> instance.

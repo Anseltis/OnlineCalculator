@@ -10,7 +10,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical.Exceptions
         public void Message_2at4_CantParse2at4()
         {
             var exception = new LexicalParsingException("2@4");
-            Assert.That(exception.Message, Is.EqualTo("Can't parse expression 2@4"));
+            Assert.That(exception.Message, Is.EqualTo("Can't parse expression '2@4'"));
         }
 
         [Test]

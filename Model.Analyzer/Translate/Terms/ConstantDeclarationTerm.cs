@@ -1,4 +1,7 @@
-﻿namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
+﻿using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
+
+namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
 {
     /// <summary>
     /// Class for constant term without real linking

@@ -91,8 +91,6 @@
     <Compile Include="Translate\Operators\UnaryPlusOperator.cs" />
     <Compile Include="Translate\Resolvers\ConstantResolver.cs" />
     <Compile Include="Translate\Resolvers\FunctionResolver.cs" />
-    <Compile Include="Translate\Resolvers\IResolver.cs" />
-    <Compile Include="Translate\Resolvers\IResolverType.cs" />
     <Compile Include="Translate\Resolvers\ParamFunctionResolver.cs" />
     <Compile Include="Translate\Rewriter\ResolverSyntaxRewriter.cs" />
     <Compile Include="Translate\Resolvers\ResolverType.cs" />
@@ -102,10 +100,7 @@
     <Compile Include="Translate\Terms\ConstantTerm.cs" />
     <Compile Include="Translate\Terms\FunctionDeclarationTerm.cs" />
     <Compile Include="Translate\Terms\FunctionTerm.cs" />
-    <Compile Include="Translate\Terms\IDeclarationTerm.cs" />
-    <Compile Include="Translate\Terms\ILinkedTerm.cs" />
     <Compile Include="Translate\Terms\ConstantDeclarationTerm.cs" />
-    <Compile Include="Translate\Terms\ITerm.cs" />
     <Compile Include="Translate\Terms\NumberTerm.cs" />
     <Compile Include="Translate\Terms\ParamFunctionTerm.cs" />
     <Compile Include="Translate\Terms\TermSyntacticNode.cs" />

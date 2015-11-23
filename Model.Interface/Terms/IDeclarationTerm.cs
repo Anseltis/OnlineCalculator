@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
+﻿namespace AnsiSoft.Calculator.Model.Interface.Terms
 {
 
     /// <summary>

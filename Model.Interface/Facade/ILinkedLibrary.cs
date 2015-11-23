@@ -5,6 +5,7 @@ namespace AnsiSoft.Calculator.Model.Interface.Facade
     /// <summary>
     /// Interface for external source of resolving constants and functions
     /// </summary>
+    /// TODO: Implement visitor pattern 
     public interface ILinkedLibrary
     {
         /// <summary>

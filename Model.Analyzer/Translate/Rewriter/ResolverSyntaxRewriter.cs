@@ -8,6 +8,8 @@ using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Resolvers;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter

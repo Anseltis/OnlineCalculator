@@ -7,6 +7,8 @@ using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Resolvers;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers
 {
@@ -16,7 +18,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers
     public sealed class FunctionResolver : IResolver
     {
         #region implement IResolver
-        public ILinkedTerm Resolve(IDeclarationTerm term, IEnumerable<ISyntacticNode> children, ILinkedLibrary linkedLibrary)
+        public IResolvedTerm Resolve(IDeclarationTerm term, IEnumerable<ISyntacticNode> children, ILinkedLibrary linkedLibrary)
         {
             var method = linkedLibrary.FindMethod(term.Identifier, children.Count());
             return method == null ? null : new FunctionTerm(method);

@@ -7,6 +7,7 @@ using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 using NUnit.Framework;
 using Rhino.Mocks;

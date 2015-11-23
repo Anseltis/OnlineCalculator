@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq.Expressions;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Operators;
+using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
 {
     /// <summary>
     /// Class for binary operator term
     /// </summary>
-    public sealed class BinaryOperatorTerm : ILinkedTerm
+    public sealed class BinaryOperatorTerm : IResolvedTerm
     {
-        #region implement ILinkedTerm
+        #region implement IResolvedTerm
         public Expression CreateExpression(Expression[] children)
         {
             return Operator.CreateExpression(children[0], children[1]);

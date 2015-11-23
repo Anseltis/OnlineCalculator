@@ -6,6 +6,7 @@ using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Operators;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter
@@ -85,7 +86,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter
                 .Select(nd => nd.CreateExpression())
                 .ToArray();
             var termNode = (TermSyntacticNode) node;
-            var term = (ILinkedTerm) termNode.Term;
+            var term = (IResolvedTerm) termNode.Term;
             return term.CreateExpression(children);
         }
 

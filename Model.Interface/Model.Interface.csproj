@@ -58,8 +58,13 @@
     <Compile Include="Facade\ILinker.cs" />
     <Compile Include="Facade\IProcessor.cs" />
     <Compile Include="Facade\ISyntacticAnalyzer.cs" />
+    <Compile Include="Resolvers\IResolver.cs" />
+    <Compile Include="Terms\IDeclarationTerm.cs" />
+    <Compile Include="Terms\IResolvedTerm.cs" />
     <Compile Include="Nodes\ISyntacticNode.cs" />
     <Compile Include="Nodes\ISyntacticNodeType.cs" />
+    <Compile Include="Resolvers\IResolverType.cs" />
+    <Compile Include="Terms\ITerm.cs" />
     <Compile Include="Nodes\ITokenBuilder.cs" />
     <Compile Include="Transit\ILexicalRule.cs" />
     <Compile Include="Transit\ISyntacticParseIterateResult.cs" />
@@ -70,6 +75,7 @@
     <Compile Include="Facade\ITranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
