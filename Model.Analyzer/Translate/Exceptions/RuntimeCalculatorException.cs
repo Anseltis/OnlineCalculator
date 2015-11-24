@@ -6,6 +6,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions
     /// Exception class for runtime error in the calculation expression
     /// This case reveals if expression doesn't pass translation
     /// </summary>
+    [Serializable]
     public sealed class RuntimeCalculatorException : Exception
     {
         /// <summary>

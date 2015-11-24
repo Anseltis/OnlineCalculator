@@ -6,6 +6,7 @@ namespace AnsiSoft.Calculator.Model.Reflection.Exceptions
     /// Exception class of non-static linked class
     /// This case reveals if linker initializes non-static class
     /// </summary>
+    [Serializable]
     public sealed class NonStaticClassException : Exception
     {
         /// <summary>

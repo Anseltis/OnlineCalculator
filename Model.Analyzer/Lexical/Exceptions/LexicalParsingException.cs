@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions
 {
@@ -6,6 +7,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions
     /// Exception class for wrong leical parsing of expression
     /// This case reveals if expression doesn't pass lexical analyzer
     /// </summary>
+    [Serializable]
     public sealed class LexicalParsingException : Exception
     {
         /// <summary>
@@ -21,6 +23,21 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions
             base($"Can't parse expression '{expression}'")
         {
             Expression = expression;
+        }
+
+        /// <summary>
+        /// When overridden in a derived class, sets the <see cref="SerializationInfo"/> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="StreamingContext"/> that contains contextual information about the source or destination.</param>
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            if (info == null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+            info.AddValue(nameof(Expression), Expression);
+            base.GetObjectData(info, context);
         }
 
     }
