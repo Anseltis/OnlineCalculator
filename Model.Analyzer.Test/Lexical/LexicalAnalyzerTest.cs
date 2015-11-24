@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AnsiSoft.Calculator.Model.Analyzer.Exceptions;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 using NUnit.Framework;

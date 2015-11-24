@@ -1,7 +1,7 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Lexical;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Exceptions;
+using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Analyzer.Translate;
-using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
 using AnsiSoft.Calculator.Model.Logic.Standard;
 using AnsiSoft.Calculator.Model.Reflection;
 using NUnit.Framework;

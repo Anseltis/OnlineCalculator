@@ -58,8 +58,8 @@
   <ItemGroup>
     <Compile Include="ProcessorTest.cs" />
     <Compile Include="Lexical\CompiledLexicalRuleTest.cs" />
-    <Compile Include="Lexical\Exceptions\WrongLexicalRuleExceptionTest.cs" />
-    <Compile Include="Lexical\Exceptions\LexicalParsingExceptionTest.cs" />
+    <Compile Include="Exceptions\WrongLexicalRuleExceptionTest.cs" />
+    <Compile Include="Exceptions\LexicalParsingExceptionTest.cs" />
     <Compile Include="Lexical\LexicalAnalyzerTest.cs" />
     <Compile Include="Lexical\LexicalRuleTest.cs" />
     <Compile Include="Lexical\Tokens\BinaryOperatorTokenTest.cs" />
@@ -72,16 +72,16 @@
     <Compile Include="Lexical\Tokens\TokenTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Syntactic\Blocks\BlockTest.cs" />
-    <Compile Include="Syntactic\Exceptions\SyntacticParseExceptionTest.cs" />
+    <Compile Include="Exceptions\SyntacticParseExceptionTest.cs" />
     <Compile Include="Syntactic\Nodes\BlockSyntacticNodeTest.cs" />
     <Compile Include="Syntactic\Nodes\TokenSyntacticNodeTest.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultHelperTest.cs" />
     <Compile Include="Syntactic\SyntacticAnalyzerTest.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultTest.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseResultTest.cs" />
-    <Compile Include="Translate\Exceptions\CannotResolveIdentifierExceptionTest.cs" />
-    <Compile Include="Translate\Exceptions\RuntimeCalculatorExceptionTest.cs" />
-    <Compile Include="Translate\Exceptions\TranslateExceptionTest.cs" />
+    <Compile Include="Exceptions\CannotResolveIdentifierExceptionTest.cs" />
+    <Compile Include="Exceptions\RuntimeCalculatorExceptionTest.cs" />
+    <Compile Include="Exceptions\TranslateExceptionTest.cs" />
     <Compile Include="Translate\LinkerTest.cs" />
     <Compile Include="Translate\Operators\DivisionOperatorTest.cs" />
     <Compile Include="Translate\Operators\MinusOperatorTest.cs" />

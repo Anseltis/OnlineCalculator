@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.Exceptions
+namespace AnsiSoft.Calculator.Model.Analyzer.Exceptions
 {
     /// <summary>
     /// Exception class for wrong syntactic parsing of expression

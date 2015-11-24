@@ -1,7 +1,7 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Exceptions;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Exceptions;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Syntactic.Exceptions
+namespace AnsiSoft.Calculator.Model.Analyzer.Test.Exceptions
 {
     [TestFixture]
     [Category("Syntactic analyzer")]

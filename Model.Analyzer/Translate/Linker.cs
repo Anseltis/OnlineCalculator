@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
+using AnsiSoft.Calculator.Model.Analyzer.Exceptions;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;

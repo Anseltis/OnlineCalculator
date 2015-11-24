@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using AnsiSoft.Calculator.Model.Analyzer.Exceptions;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Logic.Standard;
 using NUnit.Framework;

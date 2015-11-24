@@ -1,7 +1,7 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Lexical;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Exceptions;
+using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Blocks;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Exceptions;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Logic.Standard;

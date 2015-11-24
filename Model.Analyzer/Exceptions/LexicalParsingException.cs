@@ -1,25 +1,28 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions
+namespace AnsiSoft.Calculator.Model.Analyzer.Exceptions
 {
     /// <summary>
-    /// Exception class with error resolve identifier
-    /// This case reveals if expression contain identifiers which don't find in liked files
+    /// Exception class for wrong leical parsing of expression
+    /// This case reveals if expression doesn't pass lexical analyzer
     /// </summary>
     [Serializable]
-    public sealed class CannotResolveIdentifierException : Exception
+    public sealed class LexicalParsingException : Exception
     {
-        public string Identifier { get; }
+        /// <summary>
+        /// Wrog exprexxion which doesn't pass lexical analyzer
+        /// </summary>
+        public string Expression { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CannotResolveIdentifierException"/> class.
+        ///  Initializes a new instance of the <see cref="LexicalParsingException"/> class.
         /// </summary>
-        /// <param name="identifier">Unresolved identifier</param>
-        public CannotResolveIdentifierException(string identifier) :
-            base($"Does not resolve identifier '{identifier}'")
+        /// <param name="expression">Wrong expression</param>
+        public LexicalParsingException(string expression) :
+            base($"Can't parse expression '{expression}'")
         {
-            Identifier = identifier;
+            Expression = expression;
         }
 
         /// <summary>
@@ -33,7 +36,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions
             {
                 throw new ArgumentNullException(nameof(info));
             }
-            info.AddValue(nameof(Identifier), Identifier);
+            info.AddValue(nameof(Expression), Expression);
             base.GetObjectData(info, context);
         }
 

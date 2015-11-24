@@ -1,7 +1,7 @@
-﻿using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Exceptions;
 using NUnit.Framework;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Exceptions
+namespace AnsiSoft.Calculator.Model.Analyzer.Test.Exceptions
 {
     [TestFixture]
     [Category("Translator linker compiler")]

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions
+namespace AnsiSoft.Calculator.Model.Analyzer.Exceptions
 {
     /// <summary>
     /// Exception class for wrong lexical rules

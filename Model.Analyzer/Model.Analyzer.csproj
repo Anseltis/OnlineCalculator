@@ -45,8 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Processor.cs" />
-    <Compile Include="Lexical\Exceptions\LexicalParsingException.cs" />
-    <Compile Include="Lexical\Exceptions\WrongLexicalRuleException.cs" />
+    <Compile Include="Exceptions\LexicalParsingException.cs" />
+    <Compile Include="Exceptions\WrongLexicalRuleException.cs" />
     <Compile Include="Lexical\LexicalAnalyzer.cs" />
     <Compile Include="Lexical\CompiledLexicalRule.cs" />
     <Compile Include="Lexical\LexicalRule.cs" />
@@ -65,12 +65,12 @@
     <Compile Include="Syntactic\Blocks\ExpressionBlock.cs" />
     <Compile Include="Syntactic\Blocks\TupleBlock.cs" />
     <Compile Include="Syntactic\Blocks\UnaryExpressionBlock.cs" />
-    <Compile Include="Syntactic\Exceptions\SyntacticParseException.cs" />
+    <Compile Include="Exceptions\SyntacticParseException.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultHelper.cs" />
     <Compile Include="Translate\Compiler.cs" />
-    <Compile Include="Translate\Exceptions\CannotResolveIdentifierException.cs" />
-    <Compile Include="Translate\Exceptions\RuntimeCalculatorException.cs" />
-    <Compile Include="Translate\Exceptions\TranslateException.cs" />
+    <Compile Include="Exceptions\CannotResolveIdentifierException.cs" />
+    <Compile Include="Exceptions\RuntimeCalculatorException.cs" />
+    <Compile Include="Exceptions\TranslateException.cs" />
     <Compile Include="Syntactic\Nodes\BlockSyntacticNode.cs" />
     <Compile Include="Syntactic\Nodes\TokenSyntacticNode.cs" />
     <Compile Include="Syntactic\NodeTypes\BlockSyntacticNodeType.cs" />
