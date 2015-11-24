@@ -17,7 +17,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Exceptions
         /// </summary>
         /// <param name="identifier">Unresolved identifier</param>
         public CannotResolveIdentifierException(string identifier) :
-            base($"Does not resolve identifier '{identifier}'")
+            base($"Unresolves identifier '{identifier}' (or wrong signature)")
         {
             Identifier = identifier;
         }

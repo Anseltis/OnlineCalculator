@@ -36,6 +36,18 @@ namespace AnsiSoft.Calculator.Web
         {
             return Math.Pow(x, y);
         }
+        public static double Sqrt(double x)
+        {
+            return Math.Sqrt(x);
+        }
+        public static double Abs(double x)
+        {
+            return Math.Abs(x);
+        }
+        public static double Round(double x)
+        {
+            return Math.Round(x);
+        }
         public static double PI { get; private set; }
         public static double E { get; private set; }
 

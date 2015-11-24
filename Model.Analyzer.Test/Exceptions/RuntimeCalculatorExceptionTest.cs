@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Exceptions
 {
     [TestFixture]
-    [Category("Translator linker compiler")]
+    [Category("Analyzer exceptions")]
     class RuntimeCalculatorExceptionTest
     {
         [Test]

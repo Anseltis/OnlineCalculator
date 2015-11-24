@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Exceptions
 {
     [TestFixture]
-    [Category("Lexical analyzer")]
+    [Category("Analyzer exceptions")]
     public class LexicalParsingExceptionTest
     {
         [Test]
