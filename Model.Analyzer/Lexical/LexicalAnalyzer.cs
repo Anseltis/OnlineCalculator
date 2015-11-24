@@ -24,8 +24,8 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Lexical
         /// </summary>
         /// <param name="text">Input expression string</param>
         /// <returns>List of tokens</returns>
-        /// <exception cref="WrongLexicalRuleException">Thrown when wrong regular expression of rules</exception>
-        /// <exception cref="LexicalParsingException">Thrown when input text isn't valid expression sting</exception>
+        /// <exception cref="WrongLexicalRuleException">Throw when wrong regular expression of rules</exception>
+        /// <exception cref="LexicalParsingException">Throw when input text isn't valid expression sting</exception>
         public IEnumerable<IToken> Parse(string text)
         {
             if (text.Trim() == "")

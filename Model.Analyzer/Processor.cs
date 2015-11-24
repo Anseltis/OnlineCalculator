@@ -16,7 +16,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer
         /// </summary>
         /// <param name="text">Text expression</param>
         /// <returns>Result value</returns>
-        /// <exception cref="RuntimeCalculatorException">Thrown when raise runtime error.</exception>
+        /// <exception cref="RuntimeCalculatorException">Throw when raise runtime error.</exception>
         public double Calculate(string text)
         {
             var tokens = LexicalAnalyzer.Parse(text);

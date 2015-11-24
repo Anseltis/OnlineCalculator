@@ -31,7 +31,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate
         /// Throw exception if result isn't term tree.
         /// </summary>
         /// <param name="node">Root node of result</param>
-        /// <exception cref="CannotResolveIdentifierException">Error if trnslation tree contain non-term nodes</exception>
+        /// <exception cref="CannotResolveIdentifierException">Throw if trnslation tree contains non-term nodes</exception>
         public void CheckResult(ISyntacticNode node) =>
             node.Rewrite(new SyntaxRewriter(
                 nd => !((node as TermSyntacticNode)?.Term is IResolvedTerm),
