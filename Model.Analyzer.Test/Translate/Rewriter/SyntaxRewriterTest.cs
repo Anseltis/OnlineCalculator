@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using NUnit.Framework;
@@ -9,6 +8,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Rewriter
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class SyntaxRewriterTest
     {
         [Test]

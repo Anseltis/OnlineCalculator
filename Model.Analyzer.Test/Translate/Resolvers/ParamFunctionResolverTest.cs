@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
+﻿using System.Linq;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Resolvers;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Facade;
@@ -12,6 +10,7 @@ using static AnsiSoft.Calculator.Model.ReflectionTool.ReflectionHelper;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class ParamFunctionResolverTest
     {
         /// <summary>

@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Test.Container
 {
     [TestFixture]
+    [Category("Unity container")]
     public class UnityContainerTest
     {
         private class Calculator

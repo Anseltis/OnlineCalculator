@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Exceptions
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class TranslateExceptionTest
     {
         [Test]

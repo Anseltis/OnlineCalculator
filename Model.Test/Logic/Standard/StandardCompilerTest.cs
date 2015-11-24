@@ -8,7 +8,8 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
     [TestFixture]
-    public class StandardCompilatorTest
+    [Category("Standard realization")]
+    public class StandardCompilerTest
     {
         [Test]
         [TestCase("2*(1+4)", 10)]
@@ -33,7 +34,7 @@ namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
             translator.CheckResult(translatedTree);
             var linkedTree = linker.Resolve(translatedTree);
             linker.CheckResult(linkedTree);
-            var compilator = new Compilator();
+            var compilator = new Compiler();
             var lambda = compilator.CreateExpression(linkedTree);
             var result = lambda.Compile()();
             Assert.That(result, Is.EqualTo(value).Within(1e-1));

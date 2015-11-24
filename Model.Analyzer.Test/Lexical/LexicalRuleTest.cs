@@ -1,12 +1,12 @@
 ﻿using System;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using NUnit.Framework;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical
 {
     [TestFixture]
+    [Category("Lexical analyzer")]
     class LexicalRuleTest
     {
         [Test]

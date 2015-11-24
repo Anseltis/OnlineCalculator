@@ -20,6 +20,7 @@ namespace AnsiSoft.Calculator.Model.Test.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Calculator")]
+    [NUnit.Framework.CategoryAttribute("FeatureCalculator")]
     public partial class CalculatorFeature
     {
         
@@ -33,7 +34,8 @@ namespace AnsiSoft.Calculator.Model.Test.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Calculator", "In calculator to get true result\r\nAs a user\r\nI want to be check work of calculato" +
-                    "r", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "r", ProgrammingLanguage.CSharp, new string[] {
+                        "FeatureCalculator"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,13 +78,13 @@ namespace AnsiSoft.Calculator.Model.Test.Features
         public virtual void CorrectExpression(string expression, string result, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct expression", exampleTags);
-#line 6
+#line 7
 this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("I have standard processor with standart rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have standard processor with standart rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
+ testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
  testRunner.Then(string.Format("the result is {0} within accuracy 1e-3", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -98,13 +100,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void IncorrectExpression(string expression, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Incorrect expression", exampleTags);
-#line 21
+#line 22
 this.ScenarioSetup(scenarioInfo);
-#line 23
- testRunner.Given("I have standard processor with standart rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
- testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have standard processor with standart rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 25
+ testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
  testRunner.Then("the result has errors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

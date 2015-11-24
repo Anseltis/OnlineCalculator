@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical.Exceptions
 {
     [TestFixture]
+    [Category("Lexical analyzer")]
     public class WrongLexicalRuleExceptionTest
     {
         [Test]

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 using NUnit.Framework;
@@ -12,6 +11,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical
 {
     [TestFixture]
+    [Category("Lexical analyzer")]
     public class LexicalAnalyzerTest
     {
         [Test, Description("Exception if rules are null")]

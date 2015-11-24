@@ -6,6 +6,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
     [TestFixture]
+    [Category("Standard realization")]
     public class StandardProcessorTest
     {
         [Test]

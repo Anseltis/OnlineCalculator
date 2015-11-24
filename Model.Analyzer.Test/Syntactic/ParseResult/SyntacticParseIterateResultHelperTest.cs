@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Syntactic.ParseResult
 {
     [TestFixture]
+    [Category("Syntactic analyzer")]
     class SyntacticParseIterateResultHelperTest
     {
         [Test]

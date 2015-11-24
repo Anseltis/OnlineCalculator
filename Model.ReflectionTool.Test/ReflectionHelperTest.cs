@@ -5,6 +5,7 @@ using static AnsiSoft.Calculator.Model.ReflectionTool.ReflectionHelper;
 namespace AnsiSoft.Calculator.Model.ReflectionTool.Test
 {
     [TestFixture]
+    [Category("Reflection tool")]
     class ReflectionHelperTest
     {
         private static class SomeClass

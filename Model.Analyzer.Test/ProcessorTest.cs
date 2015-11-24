@@ -9,6 +9,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test
 {
     [TestFixture]
+    [Category("Processor")]
     public class ProcessorTest
     {
         private IProcessorBuilder CreateProcessorBuilderStub()
@@ -19,7 +20,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
             processorBuilder.SyntacticTarget = MockRepository.GenerateStub<ISyntacticNodeType>();
             processorBuilder.Translator = MockRepository.GenerateStub<ITranslator>();
             processorBuilder.Linker = MockRepository.GenerateStub<ILinker>();
-            processorBuilder.Compilator = MockRepository.GenerateStub<ICompilator>();
+            processorBuilder.Compiler = MockRepository.GenerateStub<ICompiler>();
             return processorBuilder;
         }
         [Test]
@@ -33,7 +34,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
             Assert.That(processor.SyntacticTarget, Is.SameAs(processorBuilder.SyntacticTarget));
             Assert.That(processor.Translator, Is.SameAs(processorBuilder.Translator));
             Assert.That(processor.Linker, Is.SameAs(processorBuilder.Linker));
-            Assert.That(processor.Compilator, Is.SameAs(processorBuilder.Compilator));
+            Assert.That(processor.Compiler, Is.SameAs(processorBuilder.Compiler));
         }
 
         [Test]
@@ -60,8 +61,8 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
             linker.Expect(l => l.CheckResult(linkedTree));
 
             Expression<Func<double>> expression = () => 1.0;
-            var compilator = MockRepository.GenerateMock<ICompilator>();
-            compilator.Expect(c => c.CreateExpression(linkedTree)).Return(expression);
+            var compiler = MockRepository.GenerateMock<ICompiler>();
+            compiler.Expect(c => c.CreateExpression(linkedTree)).Return(expression);
 
             var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
             processorBuilder.LexicalAnalyzer = lexicalAnalyzer;
@@ -69,7 +70,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
             processorBuilder.SyntacticTarget = syntacticTarget;
             processorBuilder.Translator = translator;
             processorBuilder.Linker = linker;
-            processorBuilder.Compilator = compilator;
+            processorBuilder.Compiler = compiler;
 
             var processor = new Processor(processorBuilder);
             var result = processor.Calculate(text);
@@ -80,7 +81,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
             syntacticAnalyzer.VerifyAllExpectations();
             translator.VerifyAllExpectations();
             linker.VerifyAllExpectations();
-            compilator.VerifyAllExpectations();
+            compiler.VerifyAllExpectations();
         }
 
         [Test]
@@ -137,10 +138,10 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Constructor_NullCompilator_ThrowException()
+        public void Constructor_NullCompiler_ThrowException()
         {
             var processorBuilder = CreateProcessorBuilderStub();
-            processorBuilder.Compilator = null;
+            processorBuilder.Compiler = null;
             new Processor(processorBuilder);
         }
 

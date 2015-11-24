@@ -7,6 +7,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
     [TestFixture]
+    [Category("Standard realization")]
     class StandardProcessorFactoryTest
     {
         [Test]

@@ -1,13 +1,12 @@
 using System;
 using System.IO;
+using System.Web;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Logic.Standard;
 using AnsiSoft.Calculator.Model.Reflection;
 using Microsoft.Practices.Unity;
-using static System.IO.File;
-using static System.Web.HttpRuntime;
 
-namespace Web.App_Start
+namespace AnsiSoft.Calculator.Web
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.
@@ -45,7 +44,7 @@ namespace Web.App_Start
             // TODO: Register your types here
             container
                 .RegisterInstance<ILinkedLibraryFactory>(
-                    new RuntimeLinkedLibraryFactory(ReadAllText(Path.Combine(BinDirectory, "Configuration.cs"))))
+                    new RuntimeLinkedLibraryFactory(File.ReadAllText(Path.Combine(HttpRuntime.BinDirectory, "Configuration.cs"))))
                 .RegisterType<IProcessorFactory, StandardProcessorFactory>();
 
             // container.RegisterType<IProductRepository, ProductRepository>();

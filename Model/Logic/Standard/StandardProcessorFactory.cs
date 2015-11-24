@@ -39,7 +39,7 @@ namespace AnsiSoft.Calculator.Model.Logic.Standard
                 SyntacticTarget = SyntacticTarget,
                 Translator = new Translator(TranslateRules),
                 Linker = new Linker(LinkerRules, linkedLibraryFactory.CreateLinkedLibrary()),
-                Compilator = new Compilator()
+                Compiler = new Compiler()
             };
         }
     }

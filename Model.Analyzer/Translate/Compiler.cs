@@ -10,7 +10,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Translate
     /// <summary>
     /// Class for create expression tree from translated linked tree
     /// </summary>
-    public sealed class Compilator : ICompilator
+    public sealed class Compiler : ICompiler
     {
         #region implement ICompile
         public Expression<Func<double>> CreateExpression(ISyntacticNode node) => 

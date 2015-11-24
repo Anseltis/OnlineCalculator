@@ -1,12 +1,11 @@
 ﻿using System;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Transit;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Lexical
 {
     /// <summary>
-    /// Class for rules for lexiacl analyzer
+    /// Class for rules of lexiacl analyzer
     /// </summary>
     public sealed class LexicalRule : ILexicalRule
     {

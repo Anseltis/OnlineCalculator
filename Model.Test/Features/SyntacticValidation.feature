@@ -1,4 +1,5 @@
-﻿Feature: SyntacticValidation
+﻿@FeatureSyntacticValidation
+Feature: SyntacticValidation
 	In analyzer to avoid syntactic error
 	As a user
 	I want to be check work syntactic parser

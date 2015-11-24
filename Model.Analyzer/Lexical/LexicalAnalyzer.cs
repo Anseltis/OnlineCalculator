@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using AnsiSoft.Calculator.Model.Analyzer.Lexical.Exceptions;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Transit;

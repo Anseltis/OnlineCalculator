@@ -1,50 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" GraphDirection="BottomToTop" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="@10" Category="CodeSchema_Interface" Bounds="259.285177814391,52.4790499095426,115.883333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ITranslator" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ITranslator" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/Translate/ITranslator.cs&quot; StartLineNumber=10 StartCharacterOffset=21 EndLineNumber=10 EndCharacterOffset=32)" />
-    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="11/21/2015 20:26:47" Bounds="-40.389822185609,12.4790498127426,797.775,140.0716323872" CodeSchemaProperty_StrongName="Model.Analyzer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" CommonLabel="Model.Analyzer" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FilePath="$(25f53d7e-2cf6-487a-bf02-4e3b0d732b99.OutputPath)" Group="Expanded" Label="Model.Analyzer.dll" />
-    <Node Id="@5" Category="CodeSchema_Interface" Bounds="-20.389822185609,52.4790500063426,123.233333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ICompilator" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ICompilator" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/Translate/ICompilator.cs&quot; StartLineNumber=9 StartCharacterOffset=21 EndLineNumber=9 EndCharacterOffset=32)" />
-    <Node Id="@6" Category="CodeSchema_Interface" Bounds="593.068511147724,52.4790500063426,144.316666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ILexicalAnalyzer" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILexicalAnalyzer" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/Lexical/ILexicalAnalyzer.cs&quot; StartLineNumber=8 StartCharacterOffset=21 EndLineNumber=8 EndCharacterOffset=37)" />
-    <Node Id="@7" Category="CodeSchema_Interface" Bounds="133.250177814391,52.4790500063426,95.9533333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ILinker" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILinker" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/Translate/ILinker.cs&quot; StartLineNumber=10 StartCharacterOffset=21 EndLineNumber=10 EndCharacterOffset=28)" />
-    <Node Id="@8" Category="CodeSchema_Interface" Bounds="259.563511147724,107.479050006343,115.326666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IProcessor" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IProcessor" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/Facade/IProcessor.cs&quot; StartLineNumber=10 StartCharacterOffset=21 EndLineNumber=10 EndCharacterOffset=31)" />
-    <Node Id="@9" Category="CodeSchema_Interface" Bounds="406.090177814391,52.4790500063426,156.273333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ISyntacticAnalyzer" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ISyntacticAnalyzer" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/Syntactic/ISyntacticAnalyzer.cs&quot; StartLineNumber=11 StartCharacterOffset=21 EndLineNumber=11 EndCharacterOffset=39)" />
+    <Node Id="@10" Category="CodeSchema_Interface" Bounds="-115.281768425364,91.1991087374957,95.9533333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ILinker" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILinker" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/ILinker.cs&quot; StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=28)" UseManualLocation="True" />
+    <Node Id="@11" Category="CodeSchema_Interface" Bounds="101.104609718194,184.599183631988,115.326666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IProcessor" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IProcessor" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/IProcessor.cs&quot; StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=31)" UseManualLocation="True" />
+    <Node Id="@12" Category="CodeSchema_Interface" Bounds="272.00278852311,27.1989523222861,152.326666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IProcessorBuilder" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IProcessorBuilder" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/IProcessorBuilder.cs&quot; StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=38)" UseManualLocation="True" />
+    <Node Id="@13" Category="CodeSchema_Interface" Bounds="-75.6558333333336,258.799272511438,153.503333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IProcessorFactory" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IProcessorFactory" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/IProcessorFactory.cs&quot; StartLineNumber=5 StartCharacterOffset=21 EndLineNumber=5 EndCharacterOffset=38)" UseManualLocation="True" />
+    <Node Id="@14" Category="CodeSchema_Interface" Bounds="529.714120832243,91.1991087379208,156.273333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ISyntacticAnalyzer" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ISyntacticAnalyzer" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/ISyntacticAnalyzer.cs&quot; StartLineNumber=8 StartCharacterOffset=21 EndLineNumber=8 EndCharacterOffset=39)" UseManualLocation="True" />
+    <Node Id="@15" Category="CodeSchema_Interface" Bounds="170.912165642467,93.599084215455,115.883333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ITranslator" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ITranslator" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/ITranslator.cs&quot; StartLineNumber=7 StartCharacterOffset=21 EndLineNumber=7 EndCharacterOffset=32)" UseManualLocation="True" />
+    <Node Id="@17" Category="CodeSchema_Class" Bounds="206.029166666667,264.799372511438,112.133333333333,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="Processor" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="Processor" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/Processor.cs&quot; StartLineNumber=10 StartCharacterOffset=24 EndLineNumber=10 EndCharacterOffset=33)" UseManualLocation="True" />
+    <Node Id="@7" Category="CodeSchema_Namespace" Bounds="-135.281768425364,-12.801147677714,841.26922259094,322.600620189152" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="AnsiSoft.Calculator.Model.Interface.Facade" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="AnsiSoft.Calculator.Model.Interface.Facade" UseManualLocation="True" />
+    <Node Id="@8" Category="CodeSchema_Interface" Bounds="14.6961218564433,87.5989552778443,112.306666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ICompiler" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ICompiler" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/ICompiler.cs&quot; StartLineNumber=9 StartCharacterOffset=21 EndLineNumber=9 EndCharacterOffset=30)" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Interface" Bounds="339.329455189777,94.7989480947715,144.316666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ILexicalAnalyzer" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILexicalAnalyzer" SourceLocation="(Assembly=&quot;file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/Facade/ILexicalAnalyzer.cs&quot; StartLineNumber=8 StartCharacterOffset=21 EndLineNumber=8 EndCharacterOffset=37)" UseManualLocation="True" />
   </Nodes>
   <Links>
-    <Link Source="@2" Target="@10" Category="Contains" />
-    <Link Source="@2" Target="@5" Category="Contains" />
-    <Link Source="@2" Target="@6" Category="Contains" />
-    <Link Source="@2" Target="@7" Category="Contains" />
-    <Link Source="@2" Target="@8" Category="Contains" />
-    <Link Source="@2" Target="@9" Category="Contains" />
-    <Link Source="@8" Target="@10" Category="CodeSchema_ReturnTypeLink" Bounds="317.226837158203,86.5169143676758,0,21.0107421875" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@8" Target="@5" Category="CodeSchema_ReturnTypeLink" Bounds="109.23307800293,78.564811706543,151.935745239258,30.2925415039063" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@8" Target="@6" Category="CodeSchema_ReturnTypeLink" Bounds="374.636199951172,77.5708923339844,211.129241943359,33.3852005004883" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@8" Target="@7" Category="CodeSchema_ReturnTypeLink" Bounds="220.479476928711,80.8882598876953,65.8382720947266,26.6393966674805" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@8" Target="@9" Category="CodeSchema_ReturnTypeLink" Bounds="355.181396484375,80.3290634155273,82.5425720214844,27.1985931396484" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@10" Category="CodeSchema_ReturnTypeLink" Bounds="-28.7310313592442,119.635644060929,157.242970191074,64.963539571059" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@14" Category="CodeSchema_ReturnTypeLink" Bounds="214.349732132326,118.031709757594,324.587564220625,67.5075950523008" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@15" Category="CodeSchema_ReturnTypeLink" Bounds="168.395115124274,125.729449393385,45.3399249113556,58.8697342386031" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@8" Category="CodeSchema_ReturnTypeLink" Bounds="88.2232594933243,119.267426276508,59.215008186104,65.3317573554803" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@9" Category="CodeSchema_ReturnTypeLink" Bounds="193.946002991977,122.812375411632,173.883203448385,61.7868082203561" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@12" Target="@10" Category="References" Bounds="-25.2037181854248,49.7514305114746,297.907117843628,39.8478965759277" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@12" Target="@14" Category="References" Bounds="398.885659156478,52.1989523222861,149.507064919121,36.8465173574787" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@12" Target="@15" Category="References" Bounds="259.17886627241,52.1989523222861,66.5264023173429,37.0235279618705" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@12" Target="@8" Category="References" Bounds="133.472055368848,52.1989523222861,157.302375035462,34.2607028681708" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@12" Target="@9" Category="References" Bounds="359.875010655746,52.1989523222861,33.7511773324547,36.0315760006897" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@13" Target="@11" Category="CodeSchema_ReturnTypeLink" Bounds="27.6578146091167,213.431418228132,96.404807679652,45.3678542833059" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@17" Target="@10" Category="References" Bounds="-43.1630172729492,121.549919128418,267.601585388184,143.249458312988" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@17" Target="@11" Category="Implements" Bounds="182.377309439326,215.42410673321,63.6138407683358,49.3752657782277" Weight="1" />
+    <Link Source="@17" Target="@12" Category="References" Bounds="266.62393393889,60.6608597839239,73.9487778479012,204.138512727514" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="13">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@17" Target="@14" Category="References" Bounds="286.991745546395,120.237476510814,287.920021774814,144.561896000624" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@17" Target="@15" Category="References" Bounds="232.996452839871,127.434076313153,26.6722524965516,137.365296198285" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@17" Target="@8" Category="References" Bounds="105.461784362793,116.441619873047,152.408271789551,148.357757568359" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@17" Target="@9" Category="References" Bounds="273.080508496822,126.55947866183,121.481626285842,138.239893849608" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@7" Target="@10" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@11" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@12" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@13" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@14" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@15" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@17" Category="Contains" />
+    <Link Source="@7" Target="@8" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@9" Category="Contains" FetchingParent="@7" />
   </Links>
   <Categories>
-    <Category Id="CodeSchema_Assembly" Label="Assembly" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="Assemblies" />
+    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
+    <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
     <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_Namespace" Label="Namespace" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="CodeSchema_Namespace" NavigationActionLabel="Namespaces" />
     <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
-    <Category Id="File" Label="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="Files" />
+    <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
+    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
   </Categories>
   <Properties>
-    <Property Id="AssemblyTimestamp" DataType="System.DateTime" />
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsFinal" Label="Is Final" Description="Flag to indicate the member is 'Final' and cannot be derived from" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
-    <Property Id="CodeSchemaProperty_StrongName" Label="StrongName" Description="StrongName" DataType="System.String" />
+    <Property Id="CodeSchemaProperty_IsStatic" Label="Is Static" Description="Flag to indicate the member is a static member" DataType="System.Boolean" />
     <Property Id="CommonLabel" DataType="System.String" />
     <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
     <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="Expression" DataType="System.String" />
-    <Property Id="FilePath" Label="File Path" Description="File Path" DataType="System.String" />
+    <Property Id="FetchingParent" DataType="Microsoft.VisualStudio.GraphModel.GraphNodeId" />
     <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
@@ -53,12 +102,14 @@
     <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
     <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
     <Property Id="Layout" DataType="System.String" />
     <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
     <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
     <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
     <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
     <Property Id="Value" DataType="System.String" />
     <Property Id="ValueLabel" DataType="System.String" />
     <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
@@ -71,15 +122,19 @@
     <Name Id="Type" Label="Type" ValueType="System.Object" />
   </QualifiedNames>
   <IdentifierAliases>
-    <Alias n="1" Uri="Assembly=$(25f53d7e-2cf6-487a-bf02-4e3b0d732b99.OutputPathUri)" />
-    <Alias n="2" Id="(@1)" />
-    <Alias n="3" Id="Namespace=AnsiSoft.Calculator.Model.Analyzer.Translate" />
-    <Alias n="5" Id="(@1 @3 Type=ICompilator)" />
-    <Alias n="6" Id="(@1 Namespace=AnsiSoft.Calculator.Model.Analyzer.Lexical Type=ILexicalAnalyzer)" />
-    <Alias n="7" Id="(@1 @3 Type=ILinker)" />
-    <Alias n="8" Id="(@1 Namespace=AnsiSoft.Calculator.Model.Analyzer.Facade Type=IProcessor)" />
-    <Alias n="9" Id="(@1 Namespace=AnsiSoft.Calculator.Model.Analyzer.Syntactic Type=ISyntacticAnalyzer)" />
-    <Alias n="10" Id="(@1 @3 Type=ITranslator)" />
+    <Alias n="1" Uri="Assembly=$(e449b572-a6cf-4516-bc78-4cb4e249f7d6.OutputPathUri)" />
+    <Alias n="6" Id="Namespace=AnsiSoft.Calculator.Model.Interface.Facade" />
+    <Alias n="7" Id="(@1 @6)" />
+    <Alias n="8" Id="(@1 @6 Type=ICompiler)" />
+    <Alias n="9" Id="(@1 @6 Type=ILexicalAnalyzer)" />
+    <Alias n="10" Id="(@1 @6 Type=ILinker)" />
+    <Alias n="11" Id="(@1 @6 Type=IProcessor)" />
+    <Alias n="12" Id="(@1 @6 Type=IProcessorBuilder)" />
+    <Alias n="13" Id="(@1 @6 Type=IProcessorFactory)" />
+    <Alias n="14" Id="(@1 @6 Type=ISyntacticAnalyzer)" />
+    <Alias n="15" Id="(@1 @6 Type=ITranslator)" />
+    <Alias n="16" Uri="Assembly=$(25f53d7e-2cf6-487a-bf02-4e3b0d732b99.OutputPathUri)" />
+    <Alias n="17" Id="(@16 Namespace=AnsiSoft.Calculator.Model.Analyzer Type=Processor)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -301,5 +356,6 @@
   <Paths>
     <Path Id="25f53d7e-2cf6-487a-bf02-4e3b0d732b99.OutputPath" Value="C:\Users\Anseltis\Documents\Visual Studio 2015\Projects\OnlineCalculator\Model.Analyzer\bin\Debug\Model.Analyzer.dll" />
     <Path Id="25f53d7e-2cf6-487a-bf02-4e3b0d732b99.OutputPathUri" Value="file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Analyzer/bin/Debug/Model.Analyzer.dll" />
+    <Path Id="e449b572-a6cf-4516-bc78-4cb4e249f7d6.OutputPathUri" Value="file:///C:/Users/Anseltis/Documents/Visual Studio 2015/Projects/OnlineCalculator/Model.Interface/bin/Debug/Model.Interface.dll" />
   </Paths>
 </DirectedGraph>

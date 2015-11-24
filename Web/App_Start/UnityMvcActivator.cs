@@ -1,11 +1,12 @@
 using System.Linq;
 using System.Web.Mvc;
+using AnsiSoft.Calculator.Web;
 using Microsoft.Practices.Unity.Mvc;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Web.App_Start.UnityWebActivator), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(Web.App_Start.UnityWebActivator), "Shutdown")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(UnityWebActivator), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(UnityWebActivator), "Shutdown")]
 
-namespace Web.App_Start
+namespace AnsiSoft.Calculator.Web
 {
     /// <summary>Provides the bootstrapping for integrating Unity with ASP.NET MVC.</summary>
     public static class UnityWebActivator

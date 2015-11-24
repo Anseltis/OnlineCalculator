@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
+﻿using AnsiSoft.Calculator.Model.Analyzer.Translate.Exceptions;
 using NUnit.Framework;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Exceptions
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class CannotResolveIdentifierExceptionTest
     {
         [Test]

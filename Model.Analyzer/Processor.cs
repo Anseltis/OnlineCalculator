@@ -25,7 +25,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer
             Translator.CheckResult(translatedTree);
             var linkedTree = Linker.Resolve(translatedTree);
             Linker.CheckResult(linkedTree);
-            var lambda = Compilator.CreateExpression(linkedTree);
+            var lambda = Compiler.CreateExpression(linkedTree);
 
             try
             {
@@ -66,7 +66,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer
         /// <summary>
         /// Expression builder
         /// </summary>
-        public ICompilator Compilator { get; }
+        public ICompiler Compiler { get; }
 
         /// <summary>
         ///  Initializes a new instance of the <see cref="Processor"/> class.
@@ -100,9 +100,9 @@ namespace AnsiSoft.Calculator.Model.Analyzer
             {
                 throw new ArgumentNullException(nameof(builder.Linker));
             }
-            if (builder.Compilator == null)
+            if (builder.Compiler == null)
             {
-                throw new ArgumentNullException(nameof(builder.Compilator));
+                throw new ArgumentNullException(nameof(builder.Compiler));
             }
 
             LexicalAnalyzer = builder.LexicalAnalyzer;
@@ -110,7 +110,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer
             SyntacticTarget = builder.SyntacticTarget;
             Translator = builder.Translator;
             Linker = builder.Linker;
-            Compilator = builder.Compilator;
+            Compiler = builder.Compiler;
         }
     }
 }

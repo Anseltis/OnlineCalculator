@@ -6,6 +6,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Operators
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     class UnaryPlusOperatorTest
     {
         [Test]

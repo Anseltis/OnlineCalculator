@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Reflection.Test.Exceptions
 {
     [TestFixture]
+    [Category("Reflection")]
     public class NonStaticClassExceptionTest
     {
         [Test]

@@ -8,6 +8,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Syntactic.ParseResult
 {
     [TestFixture]
+    [Category("Syntactic analyzer")]
     public class SyntacticParseResultTest
     {
         [Test]

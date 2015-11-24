@@ -1,4 +1,5 @@
-﻿Feature: Calculator
+﻿@FeatureCalculator
+Feature: Calculator
 	In calculator to get true result
 	As a user
 	I want to be check work of calculator

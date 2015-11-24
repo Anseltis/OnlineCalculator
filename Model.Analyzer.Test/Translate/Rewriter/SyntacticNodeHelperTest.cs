@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Blocks;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Rewriter;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
@@ -12,6 +10,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Rewriter
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class SyntacticNodeHelperTest
     {
         [Test]

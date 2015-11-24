@@ -52,7 +52,7 @@
     <Compile Include="Facade\IProcessorBuilder.cs" />
     <Compile Include="Facade\IProcessorFactory.cs" />
     <Compile Include="Nodes\IBlock.cs" />
-    <Compile Include="Facade\ICompilator.cs" />
+    <Compile Include="Facade\ICompiler.cs" />
     <Compile Include="Facade\ILexicalAnalyzer.cs" />
     <Compile Include="Facade\ILinkedLibrary.cs" />
     <Compile Include="Facade\ILinker.cs" />

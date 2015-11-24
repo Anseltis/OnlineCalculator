@@ -7,6 +7,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Terms
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class UnaryOperatorTermTest
     {
         [Test]

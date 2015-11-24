@@ -11,6 +11,7 @@ namespace AnsiSoft.Calculator.Model.Test.Logic.Standard
 {
 
     [TestFixture]
+    [Category("Standard realization")]
     public class StandardSyntacticAnalyzerTest
     {
         private ILexicalAnalyzer LexicalAnalyzer { get; set; }

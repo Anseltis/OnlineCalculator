@@ -37,6 +37,6 @@ namespace AnsiSoft.Calculator.Model.Logic
         /// <summary>
         /// Expression builder
         /// </summary>
-        public ICompilator Compilator { get; set; }
+        public ICompiler Compiler { get; set; }
     }
 }

@@ -67,7 +67,7 @@
     <Compile Include="Syntactic\Blocks\UnaryExpressionBlock.cs" />
     <Compile Include="Syntactic\Exceptions\SyntacticParseException.cs" />
     <Compile Include="Syntactic\ParseResult\SyntacticParseIterateResultHelper.cs" />
-    <Compile Include="Translate\Compilator.cs" />
+    <Compile Include="Translate\Compiler.cs" />
     <Compile Include="Translate\Exceptions\CannotResolveIdentifierException.cs" />
     <Compile Include="Translate\Exceptions\RuntimeCalculatorException.cs" />
     <Compile Include="Translate\Exceptions\TranslateException.cs" />

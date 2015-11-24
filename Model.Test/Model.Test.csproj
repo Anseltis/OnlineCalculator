@@ -88,7 +88,7 @@
       <DependentUpon>SyntacticValidation.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\SyntacticValidationSteps.cs" />
-    <Compile Include="Logic\Standard\StandardCompilatorTest.cs" />
+    <Compile Include="Logic\Standard\StandardCompilerTest.cs" />
     <Compile Include="Logic\Standard\StandardLexicalAnalyzerTest.cs" />
     <Compile Include="Logic\Standard\StandardLinkerTest.cs" />
     <Compile Include="Logic\Standard\StandardRuntimeLinkedProcessorTest.cs" />

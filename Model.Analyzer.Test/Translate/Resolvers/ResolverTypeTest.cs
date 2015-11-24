@@ -5,6 +5,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     class ResolverTypeTest
     {
         [Test]

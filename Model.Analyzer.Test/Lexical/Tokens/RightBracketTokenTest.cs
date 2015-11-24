@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Lexical.Tokens
 {
     [TestFixture]
+    [Category("Lexical analyzer")]
     public class RightBracketTokenTest
     {
         [Test, Description("Check error under constructor")]

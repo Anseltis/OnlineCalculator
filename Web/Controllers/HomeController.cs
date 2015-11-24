@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using AnsiSoft.Calculator.Model.Interface.Facade;
 
-namespace Web.Controllers
+namespace AnsiSoft.Calculator.Web.Controllers
 {
     /// <summary>
     /// Clas-contoller

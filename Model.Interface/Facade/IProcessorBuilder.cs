@@ -35,6 +35,6 @@ namespace AnsiSoft.Calculator.Model.Interface.Facade
         /// <summary>
         /// Expression builder
         /// </summary>
-        ICompilator Compilator { get; set; }
+        ICompiler Compiler { get; set; }
     }
 }

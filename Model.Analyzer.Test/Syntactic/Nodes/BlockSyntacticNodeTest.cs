@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Blocks;
+﻿using System.Linq;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using NUnit.Framework;
@@ -9,6 +7,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Syntactic.Nodes
 {
     [TestFixture]
+    [Category("Syntactic analyzer")]
     public class BlockSyntacticNodeTest
     {
         [Test]

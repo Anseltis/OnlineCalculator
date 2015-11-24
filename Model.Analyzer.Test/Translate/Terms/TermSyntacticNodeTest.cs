@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
 using AnsiSoft.Calculator.Model.Analyzer.Translate.Terms;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using AnsiSoft.Calculator.Model.Interface.Terms;
@@ -9,6 +8,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Terms
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class TermSyntacticNodeTest
     {
         [Test]

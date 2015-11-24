@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Web
+namespace AnsiSoft.Calculator.Web
 {
     /// <summary>
     /// Configuration file for static/runtime compile

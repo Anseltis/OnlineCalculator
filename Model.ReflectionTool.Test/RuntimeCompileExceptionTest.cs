@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.ReflectionTool.Test
 {
     [TestFixture]
+    [Category("Reflection tool")]
     public class RuntimeCompileExceptionTest
     {
         [Test]

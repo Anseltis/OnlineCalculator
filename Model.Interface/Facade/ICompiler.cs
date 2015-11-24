@@ -7,7 +7,7 @@ namespace AnsiSoft.Calculator.Model.Interface.Facade
     /// <summary>
     /// Interface for create expression tree from translated linked tree
     /// </summary>
-    public interface ICompilator
+    public interface ICompiler
     {
         /// <summary>
         /// Compile translated tree and create expression tree

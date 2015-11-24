@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Terms
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class FunctionTermTest
     {
         /// <summary>

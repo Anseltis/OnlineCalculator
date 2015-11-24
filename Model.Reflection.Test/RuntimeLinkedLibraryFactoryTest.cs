@@ -6,6 +6,7 @@ using NUnit.Framework;
 namespace AnsiSoft.Calculator.Model.Reflection.Test
 {
     [TestFixture]
+    [Category("Reflection")]
     public class RuntimeLinkedLibraryFactoryTest
     {
         [Test]

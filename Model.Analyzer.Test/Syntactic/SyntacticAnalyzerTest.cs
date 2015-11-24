@@ -1,10 +1,5 @@
 ﻿using System.Linq;
-using AnsiSoft.Calculator.Model.Analyzer.Lexical.Tokens;
 using AnsiSoft.Calculator.Model.Analyzer.Syntactic;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Blocks;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.Nodes;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.NodeTypes;
-using AnsiSoft.Calculator.Model.Analyzer.Syntactic.ParseResult;
 using AnsiSoft.Calculator.Model.Interface.Nodes;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -12,6 +7,7 @@ using Rhino.Mocks;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Syntactic
 {
     [TestFixture]
+    [Category("Syntactic analyzer")]
     class SyntacticAnalyzerTest
     {
         public void Rules_Null_Null()

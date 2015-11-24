@@ -11,6 +11,7 @@ using static AnsiSoft.Calculator.Model.ReflectionTool.ReflectionHelper;
 namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
 {
     [TestFixture]
+    [Category("Translator linker compiler")]
     public class ConstantResolverTest
     {
         /// <summary>

@@ -20,6 +20,7 @@ namespace AnsiSoft.Calculator.Model.Test.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("SyntacticValidation")]
+    [NUnit.Framework.CategoryAttribute("FeatureSyntacticValidation")]
     public partial class SyntacticValidationFeature
     {
         
@@ -33,7 +34,8 @@ namespace AnsiSoft.Calculator.Model.Test.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SyntacticValidation", "In analyzer to avoid syntactic error\r\nAs a user\r\nI want to be check work syntacti" +
-                    "c parser", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "c parser", ProgrammingLanguage.CSharp, new string[] {
+                        "FeatureSyntacticValidation"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,13 +76,13 @@ namespace AnsiSoft.Calculator.Model.Test.Features
         public virtual void CorrectExpression(string expression, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Correct expression", exampleTags);
-#line 6
+#line 7
 this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("I have standard lexical and syntactic analyzers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have standard lexical and syntactic analyzers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
+ testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
  testRunner.Then("the result hasn\'t errors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -95,13 +97,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void IncorrectExpression(string expression, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Incorrect expression", exampleTags);
-#line 20
+#line 21
 this.ScenarioSetup(scenarioInfo);
-#line 22
- testRunner.Given("I have standard lexical and syntactic analyzers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 23
- testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have standard lexical and syntactic analyzers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
+ testRunner.When(string.Format("I input expression {0}", expression), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
  testRunner.Then("the result has errors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
