@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LinkedLibrary.cs" />
+    <Compile Include="ResolvedTerm.cs" />
     <Compile Include="StaticLinkedLibraryFactory.cs" />
     <Compile Include="RuntimeLinkedLibraryFactory.cs" />
     <Compile Include="Exceptions\NonStaticClassException.cs" />

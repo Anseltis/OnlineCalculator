@@ -59,7 +59,9 @@
     <Compile Include="Facade\IProcessor.cs" />
     <Compile Include="Facade\ISyntacticAnalyzer.cs" />
     <Compile Include="Resolvers\IResolver.cs" />
+    <Compile Include="Terms\IConstantDeclarationTerm.cs" />
     <Compile Include="Terms\IDeclarationTerm.cs" />
+    <Compile Include="Terms\IFunctionDeclarationTerm.cs" />
     <Compile Include="Terms\IResolvedTerm.cs" />
     <Compile Include="Nodes\ISyntacticNode.cs" />
     <Compile Include="Nodes\ISyntacticNodeType.cs" />

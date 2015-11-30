@@ -97,12 +97,9 @@
     <Compile Include="Translate\Rewriter\SyntacticNodeHelper.cs" />
     <Compile Include="Translate\Rewriter\SyntaxRewriter.cs" />
     <Compile Include="Translate\Terms\BinaryOperatorTerm.cs" />
-    <Compile Include="Translate\Terms\ConstantTerm.cs" />
     <Compile Include="Translate\Terms\FunctionDeclarationTerm.cs" />
-    <Compile Include="Translate\Terms\FunctionTerm.cs" />
     <Compile Include="Translate\Terms\ConstantDeclarationTerm.cs" />
     <Compile Include="Translate\Terms\NumberTerm.cs" />
-    <Compile Include="Translate\Terms\ParamFunctionTerm.cs" />
     <Compile Include="Translate\Terms\TermSyntacticNode.cs" />
     <Compile Include="Translate\Terms\UnaryOperatorTerm.cs" />
     <Compile Include="Translate\Translator.cs" />

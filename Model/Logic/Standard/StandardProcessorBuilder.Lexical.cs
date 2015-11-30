@@ -24,7 +24,7 @@ namespace AnsiSoft.Calculator.Model.Logic.Standard
             new[]
             {
                 new LexicalRule(
-                    @"^(?<l>\s*)(?<t>[_a-zA-Z][_a-zA-Z0-9]{0,30})((?<e>([^_a-zA-Z0-9\s]|\s*\S)[\s\S]*$)|(?<r>\s*$))",
+                    @"^(?<l>\s*)(?<t>[_a-zA-Z][_a-zA-Z0-9]{0,30})((?<e>([^_a-zA-Z0-9\s]|\s+\S)[\s\S]*$)|(?<r>\s*$))",
                     builder => new IdentifierToken(builder)),
                 new LexicalRule(
                     @"^(?<l>\s*)(?<t>[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)((?<e>([^0-9]|\s*\S)[\s\S]*$)|(?<r>\s*$))",

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using AnsiSoft.Calculator.Model.Interface.Terms;
 using NUnit.Framework;
+using Rhino.Mocks;
 
 namespace AnsiSoft.Calculator.Model.Reflection.Test
 {
@@ -8,6 +10,7 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
     [Category("Reflection")]
     public class LinkedLibraryTest
     {
+        /*
         /// <summary>
         /// Class for resolve external variable and function
         /// </summary>
@@ -49,7 +52,9 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindProperty_ExistProperty_Property()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var propertyInfo = linkedClass.FindProperty("PI");
+            var term = MockRepository.GenerateStub<IConstantDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("PI");
+            var propertyInfo = linkedClass.FindConstant(term);
             Assert.That(propertyInfo, Is.Not.Null);
             Assert.That(propertyInfo.GetValue(null), Is.EqualTo(Math.PI).Within(1e-7));
         }
@@ -58,7 +63,9 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindProperty_AbsenttProperty_Null()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var propertyInfo = linkedClass.FindProperty("Pi");
+            var term = MockRepository.GenerateStub<IConstantDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("Pu");
+            var propertyInfo = linkedClass.FindConstant(term);
             Assert.That(propertyInfo, Is.Null);
         }
 
@@ -66,7 +73,10 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindMthod_ExistMethod_Method()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var methodInfo = linkedClass.FindMethod("Sin", 1);
+            var term = MockRepository.GenerateStub<IFunctionDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("Sin");
+            term.Stub(t => t.ArgumentCount).Return(1);
+            var methodInfo = linkedClass.FindFunction(term);
             Assert.That(methodInfo, Is.Not.Null);
             var args = new object[] {Math.PI/2};
             Assert.That(methodInfo.Invoke(null, args), Is.EqualTo(1).Within(1e-7));
@@ -76,7 +86,10 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindMthod_AbsentMethod_Null()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var methodInfo = linkedClass.FindMethod("sin", 1);
+            var term = MockRepository.GenerateStub<IFunctionDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("sin");
+            term.Stub(t => t.ArgumentCount).Return(1);
+            var methodInfo = linkedClass.FindFunction(term);
             Assert.That(methodInfo, Is.Null);
         }
 
@@ -84,7 +97,10 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindMthod_ExistMethodAndWrongArgumentCount_Null()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var methodInfo = linkedClass.FindMethod("Sin", 2);
+            var term = MockRepository.GenerateStub<IFunctionDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("Sin");
+            term.Stub(t => t.ArgumentCount).Return(2);
+            var methodInfo = linkedClass.FindFunction(term);
             Assert.That(methodInfo, Is.Null);
         }
 
@@ -92,7 +108,10 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindMthod_ExistParamMethod_Method()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var methodInfo = linkedClass.FindParamMethod("Max", 1);
+            var term = MockRepository.GenerateStub<IFunctionDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("Max");
+            term.Stub(t => t.ArgumentCount).Return(1);
+            var methodInfo = linkedClass.FindParamFunction(term);
             Assert.That(methodInfo, Is.Not.Null);
             var args = new object[] {1.0, new double[] {}};
             Assert.That(methodInfo.Invoke(null, args), Is.EqualTo(1).Within(1e-7));
@@ -102,7 +121,10 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindMthod_ExistParamMethodMoreArgumentCount_Method()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var methodInfo = linkedClass.FindParamMethod("Max", 2);
+            var term = MockRepository.GenerateStub<IFunctionDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("Max");
+            term.Stub(t => t.ArgumentCount).Return(2);
+            var methodInfo = linkedClass.FindParamFunction(term);
             Assert.That(methodInfo, Is.Not.Null);
             var args = new object[] {1.0, new[] {2.0}};
             Assert.That(methodInfo.Invoke(null, args), Is.EqualTo(2).Within(1e-7));
@@ -112,7 +134,10 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindMthod_ExistParamMethodLessArgumentCount_Null()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var methodInfo = linkedClass.FindParamMethod("Max", 0);
+            var term = MockRepository.GenerateStub<IFunctionDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("Max");
+            term.Stub(t => t.ArgumentCount).Return(0);
+            var methodInfo = linkedClass.FindParamFunction(term);
             Assert.That(methodInfo, Is.Null);
         }
 
@@ -120,9 +145,12 @@ namespace AnsiSoft.Calculator.Model.Reflection.Test
         public void FindFindMthod_AbsentParamMethod_Null()
         {
             var linkedClass = new LinkedLibrary(new Lazy<Type>(() => typeof(LinkedMath)));
-            var methodInfo = linkedClass.FindParamMethod("max", 1);
+            var term = MockRepository.GenerateStub<IFunctionDeclarationTerm>();
+            term.Stub(t => t.Identifier).Return("max");
+            term.Stub(t => t.ArgumentCount).Return(1);
+            var methodInfo = linkedClass.FindParamFunction(term);
             Assert.That(methodInfo, Is.Null);
         }
-
+        */
     }
 }

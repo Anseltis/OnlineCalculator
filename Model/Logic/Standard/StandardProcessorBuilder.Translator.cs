@@ -85,7 +85,7 @@ namespace AnsiSoft.Calculator.Model.Logic.Standard
                             }
                             if (node.IsBlockOf(nameof(SyntacticRuleType.UnaryExprIsIdentifierAndLBrAndTupleAndRBr)))
                             {
-                                var term = new FunctionDeclarationTerm(tokenNode.Token.Lexeme);
+                                var term = new FunctionDeclarationTerm(tokenNode.Token.Lexeme, children.Last().Nodes.Count());
                                 return new TermSyntacticNode(term, children.Last().Nodes);
                             }
                             if (node.IsBlockOf(nameof(SyntacticRuleType.UnaryExprIsOperatorAndUnaryExpr)))

@@ -40,7 +40,7 @@ namespace AnsiSoft.Calculator.Model.Reflection
         /// <returns>Linked library</returns>
         public ILinkedLibrary CreateLinkedLibrary()
         {
-            return new LinkedLibrary(TypeLazy);
+            return new LinkedLibrary<double>(TypeLazy);
         }
     }
 }

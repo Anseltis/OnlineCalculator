@@ -10,31 +10,31 @@ namespace AnsiSoft.Calculator.Model.Interface.Facade
         /// <summary>
         /// Lexical analyzer
         /// </summary>
-        ILexicalAnalyzer LexicalAnalyzer { get; set; }
+        ILexicalAnalyzer LexicalAnalyzer { get; }
 
         /// <summary>
         /// Syntactic analyzer
         /// </summary>
-        ISyntacticAnalyzer SyntacticAnalyzer { get; set; }
+        ISyntacticAnalyzer SyntacticAnalyzer { get; }
 
         /// <summary>
         /// Target for syntactic analyzer
         /// </summary>
-        ISyntacticNodeType SyntacticTarget { get; set; }
+        ISyntacticNodeType SyntacticTarget { get; }
 
         /// <summary>
         /// Translator 
         /// </summary>
-        ITranslator Translator { get; set; }
+        ITranslator Translator { get;  }
 
         /// <summary>
         /// Identifier reslver
         /// </summary>
-        ILinker Linker { get; set; }
+        ILinker Linker { get; }
 
         /// <summary>
         /// Expression builder
         /// </summary>
-        ICompiler Compiler { get; set; }
+        ICompiler Compiler { get; }
     }
 }

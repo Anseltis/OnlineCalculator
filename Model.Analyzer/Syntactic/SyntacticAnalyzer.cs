@@ -49,7 +49,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic
         /// Initializes a new instance of the <see cref="SyntacticAnalyzer"/> class.
         /// </summary>
         /// <param name="rules">Rules of context-free grammar</param>
-        /// <exception cref="ArgumentNullException">Throw if rules are null</exception>
+        /// <exception cref="ArgumentNullException">Throws if rules are null</exception>
         public SyntacticAnalyzer(IEnumerable<IBlock> rules)
         {
             if (rules == null)

@@ -1,12 +1,11 @@
-﻿using AnsiSoft.Calculator.Model.Interface.Nodes;
-using AnsiSoft.Calculator.Model.Interface.Terms;
+﻿using AnsiSoft.Calculator.Model.Interface.Terms;
 
 namespace AnsiSoft.Calculator.Model.Analyzer.Translate.Terms
 {
     /// <summary>
     /// Class for constant term without real linking
     /// </summary>
-    public sealed class ConstantDeclarationTerm : IDeclarationTerm
+    public sealed class ConstantDeclarationTerm : IConstantDeclarationTerm
     {
         #region implement IDeclarationTerm
         public string Identifier { get; }

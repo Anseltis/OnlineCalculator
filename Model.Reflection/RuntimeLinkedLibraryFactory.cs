@@ -16,7 +16,7 @@ namespace AnsiSoft.Calculator.Model.Reflection
         /// Create linked library
         /// </summary>
         /// <returns>Linked library</returns>
-        public ILinkedLibrary CreateLinkedLibrary() => new LinkedLibrary(TypeLazy);
+        public ILinkedLibrary CreateLinkedLibrary() => new LinkedLibrary<double>(TypeLazy);
         #endregion
 
         /// <summary>

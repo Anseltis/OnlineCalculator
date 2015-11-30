@@ -12,7 +12,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test.Translate.Resolvers
         public void Resolve_AppropriateTermType_True()
         {
             var resolverType = new ResolverType<FunctionDeclarationTerm>();
-            var term = new FunctionDeclarationTerm("variable");
+            var term = new FunctionDeclarationTerm("variable", 1);
             Assert.That(resolverType.Resolve(term), Is.True);
         }
 

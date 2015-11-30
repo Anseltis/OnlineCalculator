@@ -12,21 +12,16 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
     [Category("Processor")]
     public class ProcessorTest
     {
-        private IProcessorBuilder CreateProcessorBuilderStub()
-        {
-            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
-            processorBuilder.LexicalAnalyzer = MockRepository.GenerateStub<ILexicalAnalyzer>();
-            processorBuilder.SyntacticAnalyzer = MockRepository.GenerateStub<ISyntacticAnalyzer>();
-            processorBuilder.SyntacticTarget = MockRepository.GenerateStub<ISyntacticNodeType>();
-            processorBuilder.Translator = MockRepository.GenerateStub<ITranslator>();
-            processorBuilder.Linker = MockRepository.GenerateStub<ILinker>();
-            processorBuilder.Compiler = MockRepository.GenerateStub<ICompiler>();
-            return processorBuilder;
-        }
         [Test]
         public void Constructor_Builder_SameProperty()
         {
-            var processorBuilder = CreateProcessorBuilderStub();
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(MockRepository.GenerateStub<ILexicalAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(MockRepository.GenerateStub<ISyntacticAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(MockRepository.GenerateStub<ISyntacticNodeType>());
+            processorBuilder.Stub(pb => pb.Translator).Return(MockRepository.GenerateStub<ITranslator>());
+            processorBuilder.Stub(pb => pb.Linker).Return(MockRepository.GenerateStub<ILinker>());
+            processorBuilder.Stub(pb => pb.Compiler).Return(MockRepository.GenerateStub<ICompiler>());
 
             var processor = new Processor(processorBuilder);
             Assert.That(processor.LexicalAnalyzer, Is.SameAs(processorBuilder.LexicalAnalyzer));
@@ -65,12 +60,13 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
             compiler.Expect(c => c.CreateExpression(linkedTree)).Return(expression);
 
             var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
-            processorBuilder.LexicalAnalyzer = lexicalAnalyzer;
-            processorBuilder.SyntacticAnalyzer = syntacticAnalyzer;
-            processorBuilder.SyntacticTarget = syntacticTarget;
-            processorBuilder.Translator = translator;
-            processorBuilder.Linker = linker;
-            processorBuilder.Compiler = compiler;
+
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(lexicalAnalyzer);
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(syntacticAnalyzer);
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(syntacticTarget);
+            processorBuilder.Stub(pb => pb.Translator).Return(translator);
+            processorBuilder.Stub(pb => pb.Linker).Return(linker);
+            processorBuilder.Stub(pb => pb.Compiler).Return(compiler);
 
             var processor = new Processor(processorBuilder);
             var result = processor.Calculate(text);
@@ -95,8 +91,13 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_NullLexicalAnalyzer_ThrowException()
         {
-            var processorBuilder = CreateProcessorBuilderStub();
-            processorBuilder.LexicalAnalyzer = null;
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(null);
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(MockRepository.GenerateStub<ISyntacticAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(MockRepository.GenerateStub<ISyntacticNodeType>());
+            processorBuilder.Stub(pb => pb.Translator).Return(MockRepository.GenerateStub<ITranslator>());
+            processorBuilder.Stub(pb => pb.Linker).Return(MockRepository.GenerateStub<ILinker>());
+            processorBuilder.Stub(pb => pb.Compiler).Return(MockRepository.GenerateStub<ICompiler>());
             new Processor(processorBuilder);
         }
 
@@ -104,8 +105,13 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_NullSyntacticAnalyzer_ThrowException()
         {
-            var processorBuilder = CreateProcessorBuilderStub();
-            processorBuilder.SyntacticAnalyzer = null;
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(MockRepository.GenerateStub<ILexicalAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(null);
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(MockRepository.GenerateStub<ISyntacticNodeType>());
+            processorBuilder.Stub(pb => pb.Translator).Return(MockRepository.GenerateStub<ITranslator>());
+            processorBuilder.Stub(pb => pb.Linker).Return(MockRepository.GenerateStub<ILinker>());
+            processorBuilder.Stub(pb => pb.Compiler).Return(MockRepository.GenerateStub<ICompiler>());
             new Processor(processorBuilder);
         }
 
@@ -113,8 +119,13 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_NullLSyntacticTarget_ThrowException()
         {
-            var processorBuilder = CreateProcessorBuilderStub();
-            processorBuilder.SyntacticTarget= null;
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(MockRepository.GenerateStub<ILexicalAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(MockRepository.GenerateStub<ISyntacticAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(null);
+            processorBuilder.Stub(pb => pb.Translator).Return(MockRepository.GenerateStub<ITranslator>());
+            processorBuilder.Stub(pb => pb.Linker).Return(MockRepository.GenerateStub<ILinker>());
+            processorBuilder.Stub(pb => pb.Compiler).Return(MockRepository.GenerateStub<ICompiler>());
             new Processor(processorBuilder);
         }
 
@@ -122,8 +133,13 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_NullTranslator_ThrowException()
         {
-            var processorBuilder = CreateProcessorBuilderStub();
-            processorBuilder.Translator = null;
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(MockRepository.GenerateStub<ILexicalAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(MockRepository.GenerateStub<ISyntacticAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(MockRepository.GenerateStub<ISyntacticNodeType>());
+            processorBuilder.Stub(pb => pb.Translator).Return(null);
+            processorBuilder.Stub(pb => pb.Linker).Return(MockRepository.GenerateStub<ILinker>());
+            processorBuilder.Stub(pb => pb.Compiler).Return(MockRepository.GenerateStub<ICompiler>());
             new Processor(processorBuilder);
         }
 
@@ -131,8 +147,13 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_NullLinker_ThrowException()
         {
-            var processorBuilder = CreateProcessorBuilderStub();
-            processorBuilder.Linker = null;
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(MockRepository.GenerateStub<ILexicalAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(MockRepository.GenerateStub<ISyntacticAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(MockRepository.GenerateStub<ISyntacticNodeType>());
+            processorBuilder.Stub(pb => pb.Translator).Return(MockRepository.GenerateStub<ITranslator>());
+            processorBuilder.Stub(pb => pb.Linker).Return(null);
+            processorBuilder.Stub(pb => pb.Compiler).Return(MockRepository.GenerateStub<ICompiler>());
             new Processor(processorBuilder);
         }
 
@@ -140,8 +161,13 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_NullCompiler_ThrowException()
         {
-            var processorBuilder = CreateProcessorBuilderStub();
-            processorBuilder.Compiler = null;
+            var processorBuilder = MockRepository.GenerateStub<IProcessorBuilder>();
+            processorBuilder.Stub(pb => pb.LexicalAnalyzer).Return(MockRepository.GenerateStub<ILexicalAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticAnalyzer).Return(MockRepository.GenerateStub<ISyntacticAnalyzer>());
+            processorBuilder.Stub(pb => pb.SyntacticTarget).Return(MockRepository.GenerateStub<ISyntacticNodeType>());
+            processorBuilder.Stub(pb => pb.Translator).Return(MockRepository.GenerateStub<ITranslator>());
+            processorBuilder.Stub(pb => pb.Linker).Return(MockRepository.GenerateStub<ILinker>());
+            processorBuilder.Stub(pb => pb.Compiler).Return(null);
             new Processor(processorBuilder);
         }
 
