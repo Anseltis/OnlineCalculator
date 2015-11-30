@@ -22,7 +22,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.ParseResult
         #endregion
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SyntacticParseResult"/> class
+        /// Initializes a new instance of the <see cref="SyntacticParseResult"/> class.
         /// </summary>
         /// <param name="node">Syntactic node</param>
         /// <param name="tokenNodes">Non-read token sequence</param>
