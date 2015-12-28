@@ -9,6 +9,7 @@ namespace AnsiSoft.Calculator.Model.Analyzer.Syntactic.ParseResult
     /// </summary>
     public sealed class SyntacticParseIterateResult : ISyntacticParseIterateResult
     {
+
         #region implement ISyntacticParseIterateResult
         /// <summary>
         /// Result nodes for read element of syntactic rules 
